@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>icp</title>
+    <script src="../../LayUi/swiper-5.4.1/package/js/swiper.js"></script>
+    <link rel="stylesheet" href="../../LayUi/swiper-5.4.1/package/css/swiper.css">
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../lib/vue.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            let swiper = new Swiper(".indexHeadSwiper",{
+                loop : true,
+                autoplay: {
+                    delay: 2000,//1秒切换一次
+                    disableOnInteraction: false,
+                },
+                on: {
+                    slideChangeTransitionEnd: function(){
+                        alert(this.activeIndex);
+                        let index = this.activeIndex;
+                        SwiperAnimate(index);
+                    },
+                },
+            })
+            function SwiperAnimate(index) {
+                var eq = $(".swiper-slide").eq(index);
+                eq.addClass("abc");
+                console.log(eq);
+            }
+        })
+    </script>
+    <style>
+        .indexHeadSwiper{
+            width: 500px;height: 230px;
+            background-color: #00FFFF;
+            overflow: hidden;
+        }
+        .indexHeadSwiper .swiper-slide{
+            /*width: 70px;height: 70px;*/
+            background-color: #2C8DFB;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="indexHeadSwiper">
+    <div class="swiper-wrapper" id="swiper1">
+        <div class="swiper-slide swiper-no-swiping">123</div>
+        <div class="swiper-slide swiper-no-swiping">123</div>
+        <div class="swiper-slide swiper-no-swiping">123</div>
+        <div class="swiper-slide swiper-no-swiping">123</div>
+    </div>
+</div>
+</body>
+</html>

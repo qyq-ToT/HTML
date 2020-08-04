@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            float: left;
+            margin: 10px;
+            opacity: 30%;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv1=document.getElementById('div1');
+            oDiv1.onmouseover=function(){
+                StartMove(this,400);
+            }
+        }
+        // var opacity=30; 多物体运动不要给公用的东西，会出问题，放在循环里面最好
+        function StartMove(Obj,iTarget){
+            clearInterval(Obj.timer);
+            Obj.timer=setInterval(function(){
+                var speed = (iTarget-Obj.offsetHeight)/6;
+
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+                if(Obj.opacity==iTarget){
+                    clearInterval(Obj.timer);
+                }else{
+                    Obj.style.height=Obj.offsetHeight+speed+"px";
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">变高</div>
+    <div id="div2">变宽</div>
+
+</body>
+</html>

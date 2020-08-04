@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo07</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            //两种方式
+            /**
+             * eventName(fn)
+             *
+             * 该方式有代码提示，效率高，但是有一部分JS的事件jQuery没有
+             *
+             * on(eventName,fn)
+             *
+             * 所有的原生JS事件都有用
+             *
+             * $("button").on("click",function () {
+                alert("o(*￣︶￣*)o")
+            })
+
+             */
+
+            $("button").click(function () {
+                alert("o(*￣︶￣*)o")
+            })
+        })
+    </script>
+</head>
+<body>
+<button>一个按钮</button>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局部组件</title>
+    <style>
+        .App{
+            width: 240px;height: 240px;
+            border: 1px solid magenta;
+            display: flex;justify-content: center;
+        }
+        .Vhead{
+            width: 100px;height: 100px;
+            background-color: #e56b14;
+        }
+        .Vbody{
+            width: 100px;height: 100px;
+            background-color: blueviolet;
+        }
+        .Vbtn{
+            width: 70px;height: 30px;
+            background-color: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+	<div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //声字
+        Vue.component('Vbtn',{
+            template:'<button class="Vbtn">一个按钮</button>'
+        })
+        var Vhead = {
+            data(){
+                return{
+
+                }
+            },
+            template:'<div class="Vhead">我是头部组件<Vbtn></Vbtn></div>'
+        }
+        var Vbody = {
+            data(){
+                return{
+
+                }
+            },
+            template:'<div class="Vbody">我是身体组件</div>'
+        }
+        var App = {
+            data(){
+                return{
+
+                }
+            },
+            components:{
+                Vhead:Vhead,
+                Vbody:Vbody
+            },
+            template:'<div class="App">我是入口组件<Vhead></Vhead><Vbody></Vbody></div>'
+        }
+        var app2 = new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+
+            },
+            computed:{
+
+            },
+            //挂子
+            components:{
+                App:App
+            },
+            //用子
+            template: '<App></App>'
+        })
+		// var App = {
+		// 	data(){
+		// 		return{
+		//
+		// 		}
+		// 	},
+		// 	template:
+        //         '<div>我是入口组件</div>'
+		// }
+        // var App2 = {
+        //     data(){
+        //         return{
+        //
+        //         }
+        //     },
+        //     template:
+        //         '<div>我是入口组件2</div>'
+        // }
+        // new Vue({
+        //     el:"#app",
+        //     data(){
+		// 		return{
+		//
+		// 		}
+		// 	},
+		// 	components:{
+		// 		App:App,
+        //         App2:App2
+		// 	},
+		// 	template:'<App2></App2>'
+        // })
+    </script>
+</body>
+</html>
+<!--局部组件的使用，第一步声字，第二步挂子，第三步用子-->

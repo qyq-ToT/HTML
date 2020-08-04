@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+</head>
+<body>
+<button>点了</button>
+<button>点了</button>
+<button>点了</button>
+</body>
+<script>
+    let oBtn = document.querySelectorAll('button')
+    oBtn.forEach(function (value, key, parent) {
+        oBtn[key].onclick=function () {
+            this.disabled=truesetTimeout(function () {
+                this.disabled=false;}.bind(this)
+                , 3000)}
+    })
+</script>
+</html>

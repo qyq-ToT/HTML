@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义控件</title>
+    <script src="../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            $('.btnPlay').on('click', function() {
+                if (video[0].paused) {
+                    video[0].play();
+                } else {
+                    video[0].pause();
+                }
+                return false;
+            };
+        })
+    </script>
+</head>
+<body>
+<video id="myVideo" controls poster="https://p0.ssl.img.360kuai.com/dmfd/279_130_75/t01ccdff076c342b915.webp" width="600" height="400" >
+<!--    <source src="video.mp4" type="video/mp4" />-->
+<!--    <source src="video.webm" type="video/webM" />-->
+    <source src="https://www.w3school.com.cn/i/movie.ogg" type="video/ogg" />
+    <p>Your browser does not support the video tag.</p>
+</video>
+<div class="control">
+    <a href="#" class="btnPlay">Play/Pause</a>
+</div>
+</body>
+</html>

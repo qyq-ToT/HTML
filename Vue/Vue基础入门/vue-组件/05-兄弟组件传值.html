@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div>父组件</div>
+    <one></one>
+    <two></two>
+</div>
+<script>
+    //建立一个事件中心
+    var hub = new Vue();
+    Vue.component("one",{
+        data(){
+            return{
+                num:0
+            }
+        },
+        template: `
+            <div>
+                <div>ONE :{{num}}</div>
+                <div>
+                    <button @click="handle">点了</button>
+                </div>
+            </div>`,
+        methods: {
+            handle(){
+                hub.$emit('two-event',1)
+            }
+        },
+        mounted:function () {
+            hub.$on('one-event',(val)=>{
+                this.num+=val
+            })
+        }
+    })
+    Vue.component("two",{
+        data(){
+            return{
+                num:0
+            }
+        },
+        template: `
+            <div>
+                <div>TWO :{{num}}</div>
+                <div>
+                    <button @click="handle">点了</button>
+                </div>
+            </div>`,
+        methods: {
+            handle(){
+                hub.$emit('one-event',3)
+            }
+        },
+        mounted:function () {
+            hub.$on('two-event',(val)=>{
+                this.num+=val;
+            })
+        }
+    })
+    var app = new Vue({
+            el:"#app",
+            data(){
+                return{
+
+                }
+            },
+            methods:{},
+            components:{},
+            template:``
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var iptQQ = document.getElementsByTagName('input');
+
+            oBtn.onclick=function(){
+                if(oBtn.value=='全选'){
+                    for(var i = 1;i<iptQQ.length;i++){
+                    iptQQ[i].checked=true;
+                }
+                oBtn.value="取消"
+                }else if(oBtn.value=='取消'){
+                    for(var i = 1;i<iptQQ.length;i++){
+                    iptQQ[i].checked=false;
+                    }
+                    oBtn.value="全选"
+                }
+
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <input id="btn" type="button" value="全选"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+</body>
+</html>

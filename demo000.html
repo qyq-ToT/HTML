@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">{{mag}}</div>
+<script>
+    var Son = {
+        template:`<div class="son">123</div>`
+    }
+    //声子
+    var Father = {
+        components: {Son},
+        template: `<div class="Father">1333<Son></Son></div>`
+    }
+    var app = new Vue({
+        el:"#app",
+        data(){
+            return{
+                mag:"hhh"
+            }
+        },
+        //挂子
+        components:{Father},
+        //用子
+        template:`<Father></Father>`
+    })
+</script>
+</body>
+</html>

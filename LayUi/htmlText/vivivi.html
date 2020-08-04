@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../swiper-5.4.1/package/css/swiper.min.css">
+    <link rel="stylesheet" href="../CSS/viewRowStyle.css">
+    <script src="../swiper-5.4.1/package/js/swiper.min.js"></script>
+</head>
+<body>
+<div class="viewBodyRow">
+    <div class="viewRow">
+        <div class="leftView">
+            <img src="http://www.highkun.com/cn/source/images/sjbg.jpg">
+        </div>
+        <div class="rightView">
+            <div class="rightViewTop">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href=""><img src="http://www.highkun.com/cn/source/images/highkunDesign.png"></a></div>
+                        <div class="swiper-slide"><a href=""><img src="http://www.highkun.com/cn/source/images/sn.jpg"></a></div>
+                        <div class="swiper-slide"><a href=""><img src="http://www.highkun.com/cn/source/images/hongqi.jpg"></a></div>
+                        <div class="swiper-slide"><a href=""><img src="http://www.highkun.com/cn/source/images/spzs.jpg"></a></div>
+                        <div class="swiper-slide"><a href=""><img src="http://www.highkun.com/cn/source/images/spjs.jpg"></a></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!--    <div class="swiper-pagination"></div>-->
+                </div>
+            </div>
+            <div class="rightViewBottom">
+                <div class="rightViewBottomImg">
+                    <a href="">
+                        <img src="http://www.highkun.com/cn/source/images/sjvideo.jpg">
+                        <div class="BottomImgTxt">企业视频</div>
+                    </a>
+                </div>
+                <div class="rightViewBottomImg">
+                    <a href="">
+                        <img src="http://www.highkun.com/cn/source/images/sjvi.jpg">
+                        <div class="BottomImgTxt">55周年主视觉</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<div>8888</div>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true, // 循环模式选项
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 1500,
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        mousewheel: {
+            forceToAxis: true,
+        },
+        preventLinksPropagation: false,
+
+
+
+    });
+</script>
+</body>
+</html>

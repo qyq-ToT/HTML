@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            margin-top: 40px;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            $("button").eq(0).click(function () {
+                $("div").animate({
+                    width:600
+                },3000,function () {
+                    alert("执行完毕")
+                })
+            })
+            $("button").eq(1).click(function () {
+                $("div").animate({
+                    height:600
+                },3000,function () {
+                    alert("执行完毕")
+                })
+            })
+            $("button").eq(2).click(function () {
+                $("div").animate({
+                    background:"red"
+                },3000,function () {
+                    alert("执行完毕")
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<button>变宽</button>
+<button>变高</button>
+<button>变色</button>
+<div></div>
+</body>
+</html>

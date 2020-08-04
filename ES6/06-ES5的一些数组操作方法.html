@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组操作</title>
+</head>
+<body>
+<script>
+    let arr = [77,25,63,41,52,80,12,3,78]
+    //其实最后一个参数可有可无
+    arr.forEach(function (value, index, array) {
+        console.log("值："+value);
+        console.log("索引："+index);
+        console.log("被迭代的数组是："+array);
+    })
+    //filter会返回一个数组
+    let newArr = arr.filter(function (value,index,array) {
+        // return value>=40
+        return index>=5
+    })
+    // arr.filter(function (value,index,array) {
+    //     return value>=40
+    // }).forEach(function (value, index, array) {
+    //     console.log("值："+value);
+    //     console.log("索引："+index);
+    //     console.log("被迭代的数组是："+array);
+    // })
+    console.log(newArr);
+    //some方法返回的是一个布尔值
+    console.log(arr.some(function (value, index, array) {
+        return value < 0;
+    }));
+</script>
+</body>
+</html>

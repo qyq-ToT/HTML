@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btnAtive{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <button class="btn"  v-for="(item,index) in btns"
+             :class="activeIndex == index?'btnAtive':''"
+             @click="handleToggle(index)"
+    >{{item}}</button>
+</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var vm = new Vue({
+        el:".app",
+        data:{
+            btns:["按钮一","按钮二","按钮三"],
+            activeIndex:0
+        },
+        methods:{
+            handleToggle(index){
+                this.activeIndex = index;
+            }
+        }
+    })
+</script>

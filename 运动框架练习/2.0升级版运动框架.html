@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>升级版框架</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            float: left;
+            margin: 10px;
+            border: 10px solid blue;
+            font-size: 14px;
+            opacity: 100%;
+            color: ;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            var oDiv3=document.getElementById('div3');
+            oDiv1.onmouseover=function(){
+                StartMove(this,30,"opacity");
+                
+            }
+            oDiv1.onmouseout=function(){
+                // alert(123)
+                StartMove(this,100,"opacity");
+                
+            }
+
+
+            oDiv2.onmouseover=function(){
+                // alert(123)
+                StartMove(this,600,"width");
+                
+            }
+            oDiv2.onmouseout=function(){
+                // alert(123)
+                StartMove(this,150,"width");
+                
+            }
+
+            oDiv3.onmouseover=function(){
+                // alert(123)
+                StartMove(this,100,"font-size");
+                
+            }
+            oDiv3.onmouseout=function(){
+                // alert(123)
+                StartMove(this,14,"font-size");
+                
+            }
+        }
+        // var opacity=30; 多物体运动不要给公用的东西，会出问题，放在循环里面最好
+        function StartMove(Obj,iTarget,attr){
+            clearInterval(Obj.timer);
+            Obj.timer=setInterval(function(){
+                // parseInt(getStyle(obj,"height"));
+                var cur=0;
+                if(attr=="opacity"){
+                    var cur = parseFloat(getStyle(Obj,attr));
+                }else{
+                    var cur = parseInt(getStyle(Obj,attr));
+                }
+                
+                var speed = (iTarget-cur)/6;
+
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+                if(cur==iTarget){
+                    clearInterval(Obj.timer);
+                }else{
+                    if(attr=="opacity"){
+                        Obj.style[attr]=cur+speed+"%";
+                    }else{
+                        Obj.style[attr]=cur+speed+"px";
+                    }
+                }
+            },30)
+        }
+        
+        //一个获取CSS样式表里面的东西的方法，并且带有兼容处理
+        function getStyle(obj,name){
+            if(obj.currentStyle){
+                return obj.currentStyle[name];
+            }else{
+                return getComputedStyle(obj,false)[name];//false是一个垃圾，没有意义的。
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">变高</div>
+    <div id="div2">变宽</div>
+    <div id="div3">滚!</div>
+
+</body>
+</html>

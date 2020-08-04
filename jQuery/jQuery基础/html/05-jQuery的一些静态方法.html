@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo05</title>
+    <script src="../js/jquery-1.10.1.js"></script>
+    <script>
+        /**
+         * 该方法用于暂停入口函数，比如在实际开发中需要加装完一些图片或者其它
+         * 框架才执行代码就需要这种操作。
+         * -----------顺带一提------------
+         * 原生JS的 window.onload 是所有东西加装完了才执行
+         * jQuery的 $(function(){})  只要标签加装完了就会执行，不会等待图片之类的加装完毕
+         */
+        $.holdReady(true);
+        $(function () {
+            var str = "  lnj  ";
+            //去掉字符串的空格
+            var res = $.trim(str);
+
+            console.log("---"+str+"---");
+            console.log("---"+res+"---");
+        })
+
+    </script>
+</head>
+<body>
+    <button>恢复入口函数</button>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+
+        btn.onclick=function () {
+            $.holdReady(false);
+        }
+    </script>
+</body>
+</html>

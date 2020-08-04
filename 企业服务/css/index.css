@@ -1,0 +1,22 @@
+/**公共样式*/
+body{background: #fff;}
+.layui-tab-title{border-bottom: none!important;}/**选项卡底部*/
+.layui-this{color: #1E9FFF!important;}/**选项卡头部样式*/
+.layui-this::after{border-bottom:none!important}
+/**头部*/
+.nav{padding: 15px 0;clear: both;}
+.nav_logo{float: left;}
+.nav_logo span{font-size: 24px;color: #1E9FFF;}
+.nav_logo span p{font-size: 24px;color: #B2B2B2;display: inline-block;}
+.nav_title{float: right;}
+/**尾部*/
+.foot{background-color: #2d2d2d;padding: 60px 0 30px;color: #fff;}
+.foot h3{padding-bottom: 25px;}
+.foot_logo{margin:15px 0 30px;}
+.foot_logo img{width: 20px;height: 20px;border: 1px solid #8A8A8A;border-radius: 50%;padding: 5px;}
+.foot_logo img:nth-child(2){margin: 0 8px;}
+.foot a{color: #fff;padding: 0 8px;}
+.foot dl{display: inline-block;}
+.foot dl dt{color: #8b8b8b;font-size: 14px;padding-bottom: 20px;padding-left: 6px;}
+.foot dl dd{font-size: 12px;line-height: 30px;}
+/**首页*/

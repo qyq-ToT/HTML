@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D</title>
+    <style>
+        .threeD{
+            width: 100px;height: 100px;
+            background-color: #2C8DFB;
+            position: fixed;
+            left: 0;right: 0;margin: auto;
+            /*transition: all 3s;*/
+        }
+        .threeD:hover{
+            cursor: pointer;
+            transform: rotateZ(-90deg);
+            animation: myfirst 5s;
+            animation-iteration-count:infinite;
+            animation-direction:alternate;
+        }
+        @keyframes myfirst {
+            0% {background-color: aqua}
+            20% {background-color: seagreen}
+            40% {background-color: saddlebrown}
+            60% {background-color: blueviolet}
+            80% {background-color: firebrick}
+            100% {background-color: moccasin}
+
+        }
+    </style>
+</head>
+<body>
+<div class="threeD"></div>
+</body>
+</html>

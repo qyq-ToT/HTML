@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器</title>
+    <script>
+        let Person = {
+            pp:"big",
+            fn:[
+                "吃饭",
+                "吃屎",
+                "拉屎"
+            ],
+            [Symbol.iterator](){
+                let index = 0;
+                let that = this;
+                return {
+                    next(){
+                        if (index < that.fn.length){
+                            const res = {value:that.fn[index],done:false};
+                            index++;
+                            return res
+                        }else {
+                            return {value:undefined,done:true}
+                        }
+                    }
+                }
+            }
+        }
+        for (let v of Person){
+            console.log(v);
+        }
+        let arr = [52,5,8,6,4,14,25];
+        var it = arr[Symbol.iterator]();
+        while (!it.next().done){
+            console.log(it.next());
+        }
+        for (let v of arr){
+            console.log(v);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

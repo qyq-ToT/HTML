@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父传子</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <son :message="msg" :message2="msg2"></son>
+</div>
+<script>
+    Vue.component('son',{
+        props:['message','message2'],
+        template: `<div>{{message}}{{message2}}</div>`
+    })
+    var app = new Vue({
+            el:"#app",
+            data(){
+                return{
+                    msg:"从父传入到子的数据",
+                    msg2:"第二个数据"
+                }
+            },
+            methods:{},
+            components:{},
+            template:``
+        })
+</script>
+</body>
+</html>

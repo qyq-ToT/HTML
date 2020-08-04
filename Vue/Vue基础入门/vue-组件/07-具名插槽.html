@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>具名插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <test>
+        <div slot="two">插第二个</div>
+    </test>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+    <test>
+        <div slot="one">插第一个</div>
+    </test>
+    //用template标签也可以哟，这玩意只是临时包裹一下不会渲染的
+    <test>
+        <template slot="one">
+            这样来插第一个也是可以的
+        </template>
+    </test>
+</div>
+<script>
+    Vue.component('test',{
+        template: `
+<div>
+    <one>
+        <strong>ERROR:名字叫one的插槽</strong>
+        <slot name="one">也可以有默认内容哟</slot>
+    </one>
+<strong>ERROR:名字叫two的插槽</strong>
+<slot name="two">也可以有默认内容哟</slot>
+<strong>ERROR:没名字的插槽</strong>
+<slot>也可以有默认内容哟</slot>
+</div>`
+    })
+    Vue.component('testson',{
+        template: `<div>这次插了个组件</div>`
+    })
+    var app = new Vue({
+        el:"#app",
+        data(){
+            return{
+
+            }
+        },
+        methods:{},
+        components:{},
+        template:``
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo06</title>
+    <script>
+        window.onload=function(){
+            var oTxt1 = document.getElementById("txt1");
+            var oTxt2 = document.getElementById('txt2');
+            var oBtn = document.getElementById("btn1");
+
+            oTxt1.onkeydown=function(ev){
+                var oEvent=ev||event;
+
+                //ctrlKey shiftKey altKey 判断是否同时按了这些键
+                if(oEvent.keyCode==13 && oEvent.shiftKey){
+                    oTxt2.value+=oTxt1.value+'\n';
+                    oTxt1.value='';
+                }
+            }
+
+            // oBtn.onclick=function(){
+            //     oTxt2.value+=oTxt1.value+'\n';
+            //     oTxt1.value='';
+            // }
+
+        }
+    </script>
+</head>
+<body>
+    <input id="txt1" type="text"/>
+    <input id="btn1" type="button" value="发布"/><br>
+    <textarea id="txt2" rows="10" cols="40"></textarea>
+</body>
+</html>

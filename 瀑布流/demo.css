@@ -1,0 +1,8 @@
+.div1{
+    column-count: 2;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+    column-rule: 5px outset #ff8888;
+    -webkit-column-rule: 5px outset #ff8888;
+}

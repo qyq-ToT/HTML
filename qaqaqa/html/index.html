@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最强瑞文光速QA教学</title>
+    <script src="../../LayUi/js/jquery-1.10.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var app = new Vue({
+                el:".vue",
+                data: {
+                    message: "hello vue!",
+                    head: ["最新改动", "天赋推荐", "出装选择", "大神视频", "热门皮肤", "对线教学"],
+                }
+
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div class="head vue">
+    <div class="headContent" v-for="item in head">{{item}}</div>
+</div>
+<div class="body">
+    <div class="body-left">
+        <h2>LOL锐雯</h2>
+        <div class="heroInfoRow">
+            <div class="info">
+                <div class="infoKey">中文名</div>
+                <div class="infoVal">锐雯</div>
+            </div>
+            <div class="info">
+                <div class="infoKey">出生地</div>
+                <div class="infoVal">诺克萨斯</div>
+            </div>
+            <div class="info">
+                <div class="infoKey">外文名</div>
+                <div class="infoVal">Riven</div>
+            </div>
+            <div class="info">
+                <div class="infoKey">定位</div>
+                <div class="infoVal">战士</div>
+            </div>
+        </div>
+    </div>
+    <div class="body-right">
+        <div class="info">
+            各位锐雯玩家们，还在为被人暴打而绝望吗？这里有最新
+            最强锐雯教学，相信自己，你也可以成为上帝！！！
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

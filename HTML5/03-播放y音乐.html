@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>music</title>
+    <script src="../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //编写jQuery相关代码
+            let oDiv = $(".div");
+            console.log(oDiv);
+            for (let i=0;i<oDiv.length;i++){
+                console.log($(oDiv[i]));
+                let oo = $(oDiv[i]);
+                let data = oo.data("name")
+                console.log(oDiv[i])
+                console.log(data)
+            }
+            console.log($("#divr").data("name"));
+        })
+
+    </script>
+</head>
+<body>
+<!--<audio controls="controls">-->
+<!--    <source src="mp3/告白气球.mp3">-->
+<!--</audio>-->
+<div class="div" data-name="top"></div>
+<div class="div" data-name="top"></div>
+<div class="div" data-name="left"></div>
+<div class="div" id="divr" data-name="right"></div>
+</body>
+</html>

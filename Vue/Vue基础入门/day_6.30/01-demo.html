@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app-4">
+    <ol>
+        <li v-for="(todo,index) in todos">
+            {{ todo.aa }}
+            {{ todos[index].aa }}
+        </li>
+    </ol>
+</div>
+<script>
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { aa: '学习 JavaScript' },
+                { aa: '学习 Vue' },
+                { aa: '整个牛项目' }
+            ]
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set和get</title>
+    <script>
+        class Pp{
+            age = 13;
+            get getAge(){
+                console.log(this.age);
+                return "this.age";
+            };
+            set setAge(age){
+                this.age = age;
+                console.log(this.age);
+            }
+        }
+        var pp = new Pp();
+        // console.log(pp.getAge);
+        pp.setAge = 20
+    </script>
+</head>
+<body>
+
+</body>
+</html>

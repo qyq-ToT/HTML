@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo02</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../../../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var app = new Vue({
+                el:".div1",
+                data:{
+                    abc:["嘛玩意","鬼晓得","瞅啥子"],
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="div1">
+    <div v-for="(item,index) in abc">{{item}}-------{{index}}</div>
+</div>
+</body>
+</html>

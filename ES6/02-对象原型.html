@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象原型</title>
+</head>
+<script>
+    function star(name,age) {
+        this.name=name;
+        this.age=age;
+        star.prototype = {
+            constructor:star,
+            sing(){
+                console.log(123);
+            },
+            movie(){
+                console.log(321);
+            }
+
+        }
+    }
+    var ldh = new star("刘德华",15);
+    var zxy = new star("张学友",16);
+    console.log(star.prototype);
+    console.log(zxy);
+    console.log(ldh.sing == zxy.sing);
+</script>
+<body>
+
+</body>
+</html>

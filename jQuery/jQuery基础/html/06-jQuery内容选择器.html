@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo06</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff8888;
+            border: 1px solid blueviolet;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            //找出所有的div便签中 没有任何东西的（empty） 也就是一个空盒子
+            var $div = $("div:empty");
+            console.log($div);
+            //找到所有的div中 有内容有子元素的div
+            var $div2 = $("div:parent");
+            console.log($div2)
+            //找到所有的div中 含有指定文本的div
+            var $div3 = $("div:contains(123)");
+            console.log($div3);
+            //找到所有的div中 含有指定便签的div
+            var $div4 = $("div:has('span')");
+            console.log($div4);
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div>123</div>
+    <div>321</div>
+    <div><span></span></div>
+    <div><p></p></div>
+</body>
+</html>

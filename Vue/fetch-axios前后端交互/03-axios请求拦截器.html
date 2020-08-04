@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拦截器</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.interceptors.request.use((config)=>{
+            console.log(config.url);
+            config.headers.mytoken = 'nihao';
+            return config
+        },(err)=>{
+            console.log(err);
+        })
+        axios.post('http://localhost:63342/HTML_ROW/Vue/Vue%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/day_7.3/08-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD.html?_ijt=5p8emk7nmuvhbp8h5sa0eft54i'
+            ,{
+                //post请求的参数为一个josn对象
+                "uname":"qyq",
+                "pwd":123
+            })
+            .then(ret=>{
+                console.log(ret);
+                console.log(ret);
+            })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

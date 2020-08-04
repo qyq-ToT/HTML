@@ -1,0 +1,33 @@
+.ui-titleAndSectionRow{
+    background-image: url("http://www.highkun.com/cn/source/images/background.jpg");
+    width: 100%;
+}
+/*.ui-Bbox{*/
+/*    width: 100%;*/
+/*    height: 150px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+.ui-box {
+    width: 260px;
+    height: 50px;
+    margin: 0px auto;
+    border-right: 3px solid #aaa;
+    border-left: 3px solid #aaa;
+    /*margin-top: 60px;*/
+}
+.ui-box h1 {
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+.ui-box-en h2{
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    color: #777777;
+}

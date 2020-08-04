@@ -1,0 +1,31 @@
+
+.viewBodyRow{display:flex;width: 100%;height:650px;background: #f1f1f1;justify-content: center;align-items: center;align-content: center;}
+.viewRow{width: 1100px;height: 570px;display: flex;
+}
+.viewRow .leftView{width: 240px;height: 560px;}
+.viewRow .leftView img{width: 100%;height: 100%}
+.viewRow .rightView{width: 880px;height: 570px;display: flex;
+    flex-direction: column;justify-content: flex-start;align-items: center;align-content: center;
+}
+.viewRow .rightView .rightViewTop{height: 270px;width: 880px;}
+.viewRow .rightView .rightViewTop .swiper-container {width: 850px;height: 270px;}
+.swiper-slide {text-align: center;background: #fff;width: 221px;height: 270px;
+    display: flex;justify-content: center;align-items: center;position: relative;
+}
+.swiper-slide .block{
+    position: absolute;bottom: 0;width: 100%;height: 30px;line-height: 30px;color: #FFFFFF;
+    font-size: 16px;background:-webkit-linear-gradient(#B3B3B3,#3C3C3C);
+}
+.swiper-slide a img{width: 192px;height: 278px}
+.swiper-container {width: 800px;height: 270px;}
+.viewRow .rightView .rightViewBottom{height: 270px;width: 880px;margin-top: 20px;
+    display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.viewRow .rightView .rightViewBottom .rightViewBottomImg{padding: 10px;position: relative;}
+.viewRow .rightView .rightViewBottom .rightViewBottomImg a img{width: 415px;height: 270px;}
+.viewRow .rightView .rightViewBottom .rightViewBottomImg .BottomImgTxt{width: 100px;height:36px;
+    line-height: 36px;font-size: 1rem;font-weight: 400;
+    /*border: 1px solid lightpink;*/
+    position: absolute;left: 0;right: 0;margin: auto;bottom: 20px;text-align: center;color: #FFFFFF}
+
+.viewBodyRow .viewRow .rightView .rightViewTop .swiper-container .swiper-wrapper .swiper-slide .block:hover{color: #ee6a08;cursor: pointer;}
+.viewBodyRow .viewRow .rightView .rightViewBottom .rightViewBottomImg a .BottomImgTxt:hover{color: #ee6a08;}

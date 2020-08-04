@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用layui</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        .layui-col-md6{
+            height: 250px;
+            /*background-color: #ff8888;*/
+        }
+        .hh img{
+            transition:all 5s;
+        }
+        .hh img:hover{
+            transform: scale(1.5);
+
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            $("#aaa").mouseenter(function () {
+                // alert(123)
+                $("#aaa").addClass("layui-anim");
+                $("#aaa").addClass("layui-anim-scale");
+            })
+            $("#aaa").mouseleave(function () {
+                $("#aaa").removeClass();
+            })
+        })
+    </script>
+</head>
+<body>
+
+<!-- 你的HTML代码 -->
+<div class="layui-row layui-bg-blue">
+    <div class="layui-col-md6">
+        你的内容 9/12
+    </div>
+    <div class="layui-col-md6">
+        你的内容 3/12
+    </div>
+</div>
+<div style="width: 100px;height: 100px" class="layui-icon">&#xe63d;</div>
+<div class="hh">
+    <img src="http://web.highkun.com/upload_files//con/01/15724239122705f80f6bb1c38e473eb175d7720d9417d.png">
+</div>
+
+<!--class="layui-anim layui-anim-upbit"-->
+
+<div id="aaa" style="width: 50px">
+    <div class="layui-icon layui-icon-heart-fill" style="font-size: 50px; color: #ff8888;">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="../layui/layui.js"></script>
+<script>
+
+</script>
+</body>
+</html>

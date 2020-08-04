@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+    <script>
+        window.onload = function(){
+            var data = {
+                name:"qyq",
+                pwd:"994342144"
+            }
+            observe(data)
+            function observe(data){
+                if(!data || typeof data !== 'object'){
+                    return;
+                }
+                Object.keys(data).forEach(function(key){
+                    defineReactive(data,key,data[key]);
+                });
+
+            }
+            function defineReactive(data,key,val){
+                var dep = new Dep();
+                observe(val);//防止对象里面有对象
+                Object.defineProperty(data,key,{
+                    enumerable : true,
+                    configurable:false,
+                    get:function(){
+                        Dep.target && dep.addSub(Dep.target)
+                        return val;
+                    },
+                    set:function(newVal){
+                        console.log("监听到了变化"+val+'----->'+newVal);
+                        val = newVal;
+                        dep.notify();
+                    }
+                });
+            }
+            Watcher.prototype = {
+                get:function(key){
+                    Dep.target = this;
+                    this.value = data[key];
+                    Dep.target = null;
+                }
+            }
+            function Dep(){
+                this.subs = [];
+            }
+            Dep.prototype = {
+                addSub:function(sub){
+                    this.subs.push(sub)
+                },
+                notify:function(){
+                    this.subs.forEach(function(sub){
+                        sub.update();
+                    })
+                }
+            }
+            data.name = "qqq"
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+    <script>
+        let game = {
+
+        }
+        let methods = {
+            up : Symbol(),
+            down : Symbol()
+        };
+        game[methods.up] = function () {
+            console.log("加了一个up方法");
+        }
+        game[methods.down] = function () {
+            console.log("加了一个dowm方法");
+        }
+        console.log(game);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

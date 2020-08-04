@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo12</title>
+    <style>
+        #id{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: gold;
+            left: 100px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv = document.getElementById('id');
+
+            oDiv.onmouseover=function(){
+                startMove();
+            };
+            var timer = null;
+            var a = 0;
+            function startMove(){
+
+                var timer =  setInterval(function(){
+                    clearInterval(timer)
+
+                    var speed = (500-100)/2;
+                    if(oDiv.style.width>=500){
+                        clearInterval(timer);
+                    }else{
+                        alert(oDiv.style.width);
+                        oDiv.style.width=(oDiv.style.width)+(speed)+'px';
+                    }
+
+                },30)
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="id"></div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo001</title>
+    <style>
+        .TheBiggest{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+        .ig{
+            width: 380px;height: 815px;
+            position: relative;
+        }
+        .load{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 380px;
+            height: 815px;
+            /*background-color: red;*/
+            z-index: 100;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        .loadleft{
+            width: 0px;
+            /*border: 1px solid saddlebrown;*/
+        }
+        .loadright{
+            width: 377px;
+            /*border: 1px solid greenyellow;*/
+            /*background-color: #1E9FFF;*/
+        }
+        .loadright img{
+            width: 100%;
+            height: 100%;
+        }
+        .ig img{
+            width: 100%;
+            height: 100%;
+
+        }
+        .BBC{
+            width: 380px;
+            height: 815px;
+            /*background-color: #00F7DE;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            top: 0;
+            z-index: 300;
+        }
+        .content_row{
+            width: 376px;height: 815px;
+            position: relative;
+            background-color: rgba(08,08,08,0.5);
+        }
+        .sub{
+            width: 325px;
+            height: 185px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 200px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .sub-Bigtitle{
+            width: 200px;
+            height: 60px;
+            /*background: red;*/
+            font-size: 32px;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .sub-title{
+            width: 160px;
+            height: 30px;
+            /*background: gold;*/
+            font-size: 14px;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 18px;
+            text-align: center
+        }
+        .sub-title::after{
+            content: " ";
+            display: block;
+            width: 56px;
+            height: 2px;
+            background: #f27321;
+            margin:10px auto;
+
+
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+
+            $(".load").children(".loadleft").animate({width:377},1000);
+            $(".load").children(".loadright").animate({width:0},1000);
+            $("body").delegate(".BBC","mouseenter",function () {
+                // var $cr = $(this)
+                $(this).children(".content_row").stop().animate({
+                    height:185,
+                    // marginTop:615,
+                },800,function () {
+
+                })
+                $(this).children(".content_row").children(".sub").stop().animate({
+                    bottom:0,
+                },800,function () {
+
+                })
+            })
+            $("body").delegate(".BBC","mouseleave",function () {
+                $(this).children(".content_row").stop().animate({
+                    height:815,
+                    // marginTop:0,
+                },800,function () {
+
+                })
+                $(this).children(".content_row").children(".sub").stop().animate({
+                    bottom:200,
+                },800,function () {
+
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div>1235642165</div>
+
+<div class="TheBiggest">
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/jzgc.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">建筑工程</div>
+                    <div class="sub-title">
+                        匠心专注好建筑
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/wljz.jpg">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">智能房屋</div>
+                    <div class="sub-title">
+                        制造·装配·集成专家
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/znfw.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">美好生活</div>
+                    <div class="sub-title">
+                        舒适·便捷·爱
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/mh.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">生活增值</div>
+                    <div class="sub-title">
+                        打造美好生活
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 200px ;width: 100% ;margin-top: 50px;">567</div>
+</body>
+</html>

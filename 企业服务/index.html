@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<link href="lib/layui/css/layui.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--主体-->
+		<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+			<!--选项卡头部-->
+			<div class="layui-tab-title layui-main nav">
+				<div class="nav_logo">
+					<span>企业服务官网<p>模块</p> </span>
+				</div>
+				<ul class="nav_title">
+					<li class="layui-this">首页</li>
+					<li>产品服务</li>
+					<li>客户案例</li>
+					<li>会员中心</li>
+					<li>关于我们</li>
+				</ul>
+			</div>
+			<!--选项卡主体-->
+			<div class="layui-tab-content">
+				<!--首页-->
+				<div class="layui-tab-item layui-show">1</div>
+				<!--产品服务-->
+				<div class="layui-tab-item">2</div>
+				<!--客户案例-->
+				<div class="layui-tab-item">3</div>
+				<!--会员中心-->
+				<div class="layui-tab-item">4</div>
+				<!--关于我们-->
+				<div class="layui-tab-item">5</div>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="foot">
+			<div class="layui-main">
+				<div class="layui-row">
+					<div class="layui-col-lg6">
+						<h3>XXXXXXXXXX有限公司</h3>
+						<h5>地址:北京市朝阳区三元桥时间国际8号楼</h5>
+						<h5>电话:010-00000000</h5>
+						<h5>邮箱:suport@modao.cc</h5>
+						<div class="foot_logo">
+							<img src="image/SinaWeibo.png"/>
+							<img src="image/weiChat.png"/>
+							<img src="image/qq.png"/>
+						</div>
+						<div>
+							友情链接:<a href="">百度</a><span>|</span><a href="">新浪</a><span>|</span><a href="">网易</a>
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<dl class="layui-col-lg6">
+							<dt>企业介绍</dt>
+							<dd><a href="">产品介绍</a></dd>
+							<dd><a href="">团队介绍</a></dd>
+							<dd><a href="">关于我们</a></dd>
+						</dl>
+						<dl class="layui-col-lg6">
+							<dt>服务范围</dt>
+							<dd><a href="">产品介绍</a></dd>
+							<dd><a href="">新闻动态</a></dd>
+							<dd><a href="">服务品牌</a></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="lib/jquery-3.4.1/jquery-3.4.1.js"></script>
+		<script src="lib/layui/layui.js"></script>
+		<script>
+			//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+			layui.use('element', function() {
+				var element = layui.element;
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画2</title>
+    <script src="../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            let oDiv = $(".content");
+            $(".btn").click(function () {
+                for (let i = 0; i < oDiv.length; i++){
+                    console.log($(oDiv.eq(i)));
+                    divMove(i);
+                    sleep(2000);
+                }
+            })
+            function sleep(numberMillis) {
+                var now = new Date();
+                var exitTime = now.getTime() + numberMillis;
+                while (true) {
+                    now = new Date();
+                    if (now.getTime() > exitTime)
+                        return;
+                }
+            }
+            function divMove(i) {
+                if(i<=1){
+                    $(oDiv.eq(i)).animate({
+                        left:-900,
+                        opacity:"1%"
+                    },function () {
+                        // alert("执行完毕")
+                        $(oDiv.eq(i)).animate({
+                            left:0,
+                            opacity:"100%"
+                        },1000,function () {
+
+                        })
+                    })
+                }else {
+                    $(oDiv.eq(i)).animate({
+                        marginTop:600
+                    },2000,function () {
+                        // alert("执行完毕")
+                    })
+                }
+            }
+        })
+    </script>
+    <style>
+        .btn{
+            width: 100px;height: 30px;
+        }
+        .bro{
+            width: 100%;height: 1000px;
+            border: 1px solid seagreen;
+            background-color: #cccccc;
+            display: flex;justify-content: center;align-items: center;
+        }
+        .row{
+            background: saddlebrown;
+            width: 1000px;height: 920px;
+            position: relative;
+        }
+        .row .content{
+            position: absolute;
+            top: 0px;
+            margin-top: 10px;
+            /*width: 770px;*/
+            height: 60px;
+            line-height: 55px;font-size: 50px;color: #fff;
+            background: #0076D3;
+        }
+        .row .content:nth-child(2){
+            top: 60px;
+            height: 55px;
+            line-height: 55px;font-size: 50px;color: #fff;
+            background: #262F36;
+        }
+        .row .content:nth-child(3){
+            top: 130px;
+            background: none;
+            width: 445px;height: 42px;
+            animation: myfirst2 1s;
+            line-height: 42px;font-size: 30px;color: #186AAB
+        }
+        .row .content:nth-child(4){
+            top: 170px;
+            background: none;
+            width: 1200px;height: 56px;
+            animation: myfirst2 1s;
+            line-height: 28px;font-size: 16px;color: #fff
+        }
+    </style>
+</head>
+<body>
+<button class="btn">点我</button>
+<div class="bro">
+    <div class="row">
+        <div class="content">九天银河产业园--第一个第二个</div>
+        <div class="content">QAQAQA</div>
+
+        <div class="content">随便打打算了</div>
+        <div class="content">
+            好地方计划位爱淘宝蒋某IM额比自然难免会是紫色让她见你爸妈买的什么女妖打来福MV我我玩把问题好吧VN那么肥奇偶码誒别VN后面
+        </div>
+    </div>
+</div>
+</body>
+</html>

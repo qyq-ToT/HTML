@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv = document.getElementById("div1");
+
+            var disX=0;
+            var disY=0;
+
+            document.onmousedown=function(ev){
+                var oEvent = ev||event;
+
+                disX=oEvent.clientX-oDiv.offsetLeft;
+                disY=oEvent.clientY-oDiv.offsetTop;
+
+                var oBox = document.createElement('div');
+
+                oBox.className='box';
+                oBox.style.border="1px solid red";
+                oBox.style.position="absolute";
+                oBox.style.width=oDiv.offsetWidth+'px';
+                oBox.style.height=oDiv.offsetHeight+'px';
+                oBox.style.left=oDiv.offsetLeft+'px';
+                oBox.style.top=oDiv.offsetTop+'px';
+
+                document.body.appendChild(oBox);
+
+                document.onmousemove=function(ev){
+                var oEvent = ev||event;
+
+                var x = oEvent.clientX-disX;
+                var y = oEvent.clientY-disY;
+
+                if(x<0){
+                    x=0;
+                }
+                if(y<0){
+                    y=0;
+                }
+                //document.documentElement.clientWidth 可视区的宽度 减去 盒子的宽度 ，超过 归零
+                if(x>document.documentElement.clientWidth-oDiv.offsetWidth){
+                    x=document.documentElement.clientWidth-oDiv.offsetWidth;
+                }
+                if(y>document.documentElement.clientHeight-oDiv.offsetHeight){
+                    y=document.documentElement.clientHeight-oDiv.offsetHeight;
+                }
+
+                oBox.style.left=x+'px';
+                oBox.style.top=y+'px';
+                };
+
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+
+                    oDiv.style.left=oBox.offsetLeft+'px';
+                    oDiv.style.top=oBox.offsetTop+'px';
+
+                    document.body.removeChild(oBox);
+                };
+
+                return false;
+            };
+            
+        };
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

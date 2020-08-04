@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo11</title>
+    <script>
+        window.onload=function(){
+            var oBtn1 = document.getElementById("btn1");
+            var oBtn2 = document.getElementById("btn2");
+            var timer = null;
+            oBtn1.onclick=function(){
+                timer = setInterval(function(){
+                    alert("吖屎啦你！o(*￣︶￣*)o");
+                },3000);
+            }
+
+            oBtn2.onclick=function(){
+                clearInterval(timer);
+            }
+        }
+        // setInterval(show,1000); 每一秒钟执行一次
+        //3秒后执行，只执行一次
+        // setTimeout(show,3000);
+
+        var oDate = new Data();
+
+        alert(oDate.getMinutes());
+
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" value="打开">
+    <input type="button" id="btn2" value="关闭">
+</body>
+</html>

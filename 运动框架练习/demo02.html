@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            float: left;
+            margin: 10px;
+            opacity: 30%;
+            border: 10px solid black;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aDiv = document.getElementsByTagName("div");
+
+            for(var i = 0;i<aDiv.length;i++){
+                aDiv[i].timer=null;
+                aDiv[i].opacity=30;
+                aDiv[i].onmouseover=function(){
+                    StartMove(this,100);
+                }
+                aDiv[i].onmouseout=function(){
+                    StartMove(this,30);
+                }
+            }
+        }
+        // var opacity=30; 多物体运动不要给公用的东西，会出问题，放在循环里面最好
+        function StartMove(Obj,iTarget){
+            clearInterval(Obj.timer);
+            Obj.timer=setInterval(function(){
+                var speed = (iTarget-Obj.opacity)/6;
+
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+                if(Obj.opacity==iTarget){
+                    clearInterval(Obj.timer);
+                }else{
+                    Obj.opacity+=speed;
+                    // alert(opacity)
+                    Obj.style.opacity=Obj.opacity+'%'
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+</html>

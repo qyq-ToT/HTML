@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器</title>
+    <script>
+        function * gg() {
+            yield '第1句话';
+            yield '第2句话';
+            yield '第3句话';
+            yield '第4句话';
+            yield '第5句话';
+        }
+        // while (!gg().next().done){
+        //     console.log(gg().next());
+        // }
+        let it = gg();
+        // let count = 0;
+        // timer = setInterval(() =>{
+        //     console.log(gg().next());
+        //     count++
+        //     if (count>=5){
+        //         clearTimeout(timer);
+        //     }
+        // },1000)
+        for (let i = 0 ;i<5;i++){
+            setTimeout(function () {
+                
+            },5000)
+            console.log(it.next());
+        }
+        // console.log(it.next());
+        // console.log(it.next());console.log(it.next());
+        // console.log(it.next());console.log(it.next());
+
+
+
+
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

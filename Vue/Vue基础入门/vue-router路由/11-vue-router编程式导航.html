@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>router编程式导航</title>
+    <script src="../../vue.js"></script>
+    <script src="../../vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+    <router-link to="/login">登录</router-link>
+    <router-link to="/reg">注册</router-link>
+    <router-view></router-view>
+</div>
+<script>
+    var Login = {
+        template:`<div><button @click="handle">点啊</button></div>`,
+        methods: {
+            handle(){
+                this.$router.push('/reg')
+            }
+        }
+    }
+    var Reg = {
+        template: `<div>注册组件<button @click="handle">点啊</button></div>`
+        ,methods:{
+            handle() {
+                //前进后退，负1为后退上一级，2为2级，正数为前进
+                this.$router.go(-1)
+            }
+        }
+    }
+    var router = new VueRouter({
+        routes:[
+            {
+                path:'/login',
+                component:Login
+            },
+            {
+                path: "/reg",
+                component: Reg
+            }
+        ]
+    })
+    var app = new Vue({
+        el:"#app",
+        data(){
+            return{
+            }
+        },
+        methods:{},
+        components:{},
+        template:``,
+        router:router
+        })
+</script>
+</body>
+</html>

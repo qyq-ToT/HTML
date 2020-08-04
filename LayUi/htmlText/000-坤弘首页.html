@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用layui</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+    <style>
+        .head{
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            height: 60px;
+            width: 100%;
+            background-image: url("http://www.highkun.com/cn/source/images/nav_bg.png");
+            animation: myfirst 6s infinite ease-in-out;
+        }
+        @keyframes myfirst {
+            from {background: url("http://www.highkun.com/cn/source/images/nav_bg.png") 0px 0px no-repeat;}
+            50% {background: url("http://www.highkun.com/cn/source/images/nav_bg.png") 0px -60px no-repeat;}
+            to{background: url("http://www.highkun.com/cn/source/images/nav_bg.png") 0px 0px no-repeat;}
+        }
+        .head .layui-nav{background:none;}
+        .newsTop{
+            font-weight: normal;
+            height: 28px;
+            padding-left: 10px;
+            line-height: 28px;
+            font-size: 28px;
+            color: #e56b14;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        .enTop{
+            font-size: 12px;
+            color: #777;
+            font-family: arial;
+            padding-left: 4px;
+        }
+
+        .nav-clid-row1{
+            display: flex;
+            width: 380px;
+            height: 140px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .clid1{
+            width: 70px;height: 58px;line-height: 70px;text-indent: 2em;font-size: 14px;margin-left: 5px;
+        }
+        .clid1:hover{
+            color: #e56b14;
+            cursor:pointer;
+        }
+
+
+        .nav-clid-row2{
+            display:flex;flex-direction:column;width: 140px;height: 140px;
+        }
+        .clid2{
+            width: 58px;height: 70px;line-height: 70px;text-indent: 2em;font-size: 14px;
+        }
+        .clid2:hover{
+            color: #e56b14;
+            cursor:pointer;
+        }
+
+        .nav-clid-row3{
+            display: flex;
+            width: 420px;
+            height: 140px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .clid3{
+            width: 80px;height: 58px;line-height: 70px;text-indent: 2em;font-size: 14px;margin-left: 5px;
+        }
+        .clid3:hover{
+            color: #e56b14;
+            cursor:pointer;
+        }
+
+        .nav-clid-row4{
+            display: flex;
+            width: 305px;
+            height: 140px;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+        }
+        .clid4{
+            width: 58px;
+            float: left;
+            padding: 0 10px;
+            height: 70px;
+            line-height: 70px;font-size: 14px;margin-left: 10px;
+        }
+        .clid4:hover{
+            color: #e56b14;
+            cursor:pointer;
+        }
+
+        .head .layui-nav-bar{display: none;}
+        .head .layui-nav-more{display: none;}
+        .head .layui-nav-child{top: 60px}
+
+        .img1{
+            width: 380px;height: 815px;
+        }
+
+        .TheBiggest{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .ig{
+            width: 380px;height: 815px;
+            position: relative;
+        }
+        .load{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 380px;
+            height: 815px;
+            /*background-color: red;*/
+            z-index: 100;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        .loadleft{
+            width: 0px;
+            /*border: 1px solid saddlebrown;*/
+        }
+        .loadright{
+            width: 380px;
+            /*border: 1px solid greenyellow;*/
+            /*background-color: #1E9FFF;*/
+        }
+        .loadright img{
+            width: 100%;
+            height: 100%;
+        }
+        .ig img{
+            width: 100%;
+            height: 100%;
+
+        }
+        .BBC{
+            width: 380px;
+            height: 815px;
+            /*background-color: #00F7DE;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            top: 0;
+            z-index: 300;
+        }
+        .content_row{
+            width: 380px;height: 815px;
+            position: relative;
+            background-color: rgba(08,08,08,0.5);
+        }
+        .sub{
+            width: 325px;
+            height: 185px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 200px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .sub-Bigtitle{
+            width: 200px;
+            height: 60px;
+            /*background: red;*/
+            font-size: 32px;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .sub-title{
+            width: 160px;
+            height: 30px;
+            /*background: gold;*/
+            font-size: 14px;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 18px;
+            text-align: center
+        }
+        .sub-title::after{
+            content: " ";
+            display: block;
+            width: 56px;
+            height: 2px;
+            background: #f27321;
+            margin:10px auto;
+
+
+        }
+
+
+        #test1 .swiper1{
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+        .swiperTop .layui-icon{
+            font-size: 32px;
+        }
+        .swiperTop .layui-carousel-arrow{
+            width: 50px;
+            height: 80px;
+            border-radius: 0;
+            top: 164px;
+        }
+        .swiperTop .layui-carousel:hover .layui-carousel-arrow[lay-type=add], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add] {
+            right: 0;
+
+        }
+        .swiperTop .layui-carousel:hover .layui-carousel-arrow[lay-type=sub], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add]{
+            left: 0;
+        }
+        .bannerbox{
+
+            width:100%;
+            height: 420px;
+            /*background: #0000FF;*/
+            display: flex;
+            justify-content: center;
+        }
+        .newsTitle{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 340px;
+            height: 400px;
+        }
+        .newstl{
+            width: 344px;
+            height: 70px;
+            /*border: 3px solid seagreen;*/
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newstl:nth-child(1){
+            margin-top: 0;
+        }
+        .titleTop{
+            width: 100%;
+            height: 30px;
+            color: #555;
+            font-weight: bold;
+            font-size: 18px;
+            overflow: hidden;
+            white-space:nowrap; text-overflow:ellipsis;
+        }
+        .titleBottom{
+            font-size: 14px;
+            line-height: 1.5;
+            height: 40px;
+            text-align: left;
+            color: #666;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        .hover-color:hover{
+            color: #e56b14;cursor:pointer;
+        }
+        .NewsList{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .news{
+            width: 365px;
+            height: 28px;
+            border-left: 5px solid #e56b14;
+            font-weight: normal;height: 28px;
+            padding-left: 10px;
+            line-height: 28px;font-size: 28px;color: #e56b14;
+            text-align: left;margin-top: 60px;margin-bottom: 40px;
+        }
+        .en{
+            font-size: 12px;
+            color: #777;
+            font-family: arial;
+            padding-left: 4px;
+        }
+        .NewsTxt_row{
+            width: 100%;
+            height: 300px;
+            display: flex;justify-content: center;
+        }
+        .NewsTxt{
+            /*background: #0000FF;*/
+            width: 1150px;
+            height: 200px;
+            display: flex;
+        }
+        .txtli{
+            /*border: 1px solid red;*/
+            flex: 1;width: 360px;
+            display: flex;flex-direction: column;
+        }
+        .newsItem{
+            width: 312px;
+            height: 37px;color: #666;
+            font-size: 14px;line-height: 37px;overflow: hidden;
+        }
+
+        #mgch1:hover,#mgch2:hover,#mgch3:hover,#mgch4:hover,#mgch5:hover{
+            transform: scale(1.2);
+        }
+        #mgch1,#mgch2,#mgch3,#mgch4,#mgch5{
+            transition: all 1.5s;
+        }
+
+        .swiper3 .layui-icon{
+            font-size: 62px;
+            color: #1E9FFF;
+        }
+        .swiper3 .layui-carousel-arrow{
+            width: 50px;
+            height: 80px;
+            border-radius: 0;
+            top: 300px;
+        }
+
+        .layui-carousel[lay-arrow=always] .layui-carousel-arrow{
+            left: 0;
+            background: none;
+        }
+        .swiper3 .layui-carousel:hover .layui-carousel-arrow[lay-type=add], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add] {
+            right: 0;
+            background: none!important;
+
+        }
+        .swiper3 .layui-carousel:hover .layui-carousel-arrow[lay-type=sub], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add]{
+            left: 0;
+            background: none!important;
+        }
+        .swh3{
+            width:100%;
+            height:644px;
+        }
+        .NewsTxt_row .NewsTxt .txtli .two{width: 322px;height: 166px;}
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container {
+            width: 322px;
+            height: 166px;
+        }
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container .swiper-slide {
+            background: #fff;height: 166px;position: relative;float: left;
+        }
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container .swiper-slide:hover{cursor: pointer;}
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container .swiper-slide img{width: 322px;height: 166px;}
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container .swiper-slide .off{
+            font-size: 50px; color: #FFFFFF;width: 60px;height: 60px;
+            position: absolute;top: 0;bottom: 0;margin: auto;
+        }
+        .NewsTxt_row .NewsTxt .txtli .two .swiper-container .swiper-slide .title{
+            position: absolute;width: 100%;height: 30px;line-height: 30px;
+            text-align: center;left: 0;right: 0;margin: auto;bottom: 0;
+            color: #FFFFFF;font-size: 14px;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="../swiper-5.4.1/package/css/swiper.min.css">
+    <link rel="stylesheet" href="../CSS/viewRowStyle.css">
+    <link rel="stylesheet" href="../CSS/ui-boxStyle.css">
+    <link rel="stylesheet" href="../CSS/section-Style.css">
+    <link rel="stylesheet" href="../CSS/footer-style.css">
+    <script src="../swiper-5.4.1/package/js/swiper.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        // 编写jQuery相关代码
+            $(".load").children(".loadleft").animate({width:380},1000);
+            $(".load").children(".loadright").animate({width:0},1000);
+            $("body").delegate(".BBC","mouseenter",function () {
+                // var $cr = $(this)
+                $(this).children(".content_row").stop().animate({
+                    height:185,
+                    // marginTop:615,
+                },800,function () {
+
+                })
+                $(this).children(".content_row").children(".sub").stop().animate({
+                    bottom:0,
+                },800,function () {
+
+                })
+            })
+            $("body").delegate(".BBC","mouseleave",function () {
+                $(this).children(".content_row").stop().animate({
+                    height:815,
+                    // marginTop:0,
+                },800,function () {
+
+                })
+                $(this).children(".content_row").children(".sub").stop().animate({
+                    bottom:200,
+                },800,function () {
+
+                })
+            })
+            $(".beChange").mouseenter(function () {
+                $(this).css({
+                    background:"#e56b14"
+                })
+            })
+            $(".beChange").mouseleave(function () {
+                $(this).css({
+                    background:""
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<!-- 你的HTML代码 -->
+<div class="layui-row  head" >
+    <div class="layui-col-md5">
+        <ul style="height: 60px" class="layui-nav" lay-filter="">
+            <li><img style="position: fixed;top: 16px;" src="http://www.highkun.com/en/source/images/logo.png"></li>
+        </ul>
+    </div>
+    <div class="layui-col-md7">
+        <ul class="layui-nav" lay-filter="">
+            <li class="layui-nav-item beChange"><a href="">首页</a></li>
+            <li class="layui-nav-item beChange">
+                <a href="">走进弘坤</a>
+                <div class="layui-nav-child  layui-anim-fadein">
+                    <div class="nav-clid-row1">
+                        <div class="clid1">企业概况</div>
+                        <div class="clid1">企业荣誉</div>
+                        <div class="clid1">发展历程</div>
+                        <div class="clid1">企业文化</div>
+                        <div class="clid1"></div>
+                        <div class="clid1">弘坤画册</div>
+                    </div>
+                </div>
+            </li>
+            <li class="layui-nav-item beChange">
+                <a href="">新闻中心</a>
+                <div class="layui-nav-child layui-bg-black layui-anim-fadein">
+                    <div class="nav-clid-row2">
+                        <div class="clid2">公司新闻</div>
+                        <div class="clid2">视频中心</div>
+                    </div>
+                </div>
+            </li>
+            <li class="layui-nav-item beChange">
+                <a href="">建设开发</a>
+                <div class="layui-nav-child layui-bg-black layui-anim-fadein">
+                    <div class="nav-clid-row3">
+                        <div class="clid3">沙坪建设</div>
+                        <div class="clid3">弘坤房产</div>
+                        <div class="clid3">三能房屋</div>
+                        <div class="clid3">沙坪装饰</div>
+<!--                        <div class="clid3"></div>-->
+                        <div class="clid3">沙坪设计院</div>
+                    </div>
+                </div>
+            </li>
+            <li class="layui-nav-item beChange">
+                <a href="">投资服务</a>
+                <div class="layui-nav-child layui-bg-black layui-anim-fadein">
+                    <div class="nav-clid-row4">
+                        <div class="clid4">弘德金融</div>
+                        <div class="clid4">弘坤商管</div>
+                        <div class="clid4">社都科技</div>
+<!--                        <div class="clid4"></div>-->
+                        <div class="clid4">宜居物业</div>
+                    </div>
+                </div>
+            </li>
+            <li class="layui-nav-item beChange"><a href="">雁行-招聘</a></li>
+            <li class="layui-nav-item beChange"><a href="">联系我们</a></li>
+            <li class="layui-nav-item" style="float: right"><a href="">      中|EN</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="TheBiggest">
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/jzgc.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">建筑工程</div>
+                    <div class="sub-title">
+                        匠心专注好建筑
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/wljz.jpg">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">智能房屋</div>
+                    <div class="sub-title">
+                        制造·装配·集成专家
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/znfw.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">美好生活</div>
+                    <div class="sub-title">
+                        舒适·便捷·爱
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+    <div class="ig">
+        <img src="http://www.highkun.com/cn/source/images/mh.png">
+        <div class="BBC">
+            <div class="content_row">
+                <div class="sub">
+                    <div class="sub-Bigtitle">生活增值</div>
+                    <div class="sub-title">
+                        打造美好生活
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="load">
+            <div class="loadleft"></div>
+            <div class="loadright">
+                <img src="https://t1.picb.cc/uploads/2020/06/12/ti203W.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newsTop">新闻中心
+    <span class="enTop">| News Center</span>
+</div>
+<div class="layui-row bannerbox">
+    <div class="layui-col-md6">
+        <div class="swiperTop">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                    <div class="layui-anim layui-anim-scale">
+                        <img id="mgch1" class="swiper1" src="http://web.highkun.com/upload_files//con/01/15724239122705f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch2" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724238599785f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch3" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724238045265f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch4" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724240273505f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch5" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724239537175f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3">
+        <div class="newsTitle">
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">
+                        大湾区，让你久等了 | 弘坤房产粤港...
+                    </a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">6月5日，惠州弘坤·九溪红树项目顺利通过联席会上会审批，标志着该项目已全面进入开发建设阶段。</a>
+                </div>
+
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">“弘”动星城 “寓”领长沙 | 弘坤·君寓营</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">在建党99周年前夕，沙坪建设集团党委在花垣碧桂园项目部成立2020年度第一个“流动党支部”。4月29日</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">红色引擎 沙坪力量 | 集团党委在花垣证监会发玩of哈维覅偶fish共is将公开了十几个偶问题和</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">历经上百个日夜的匠心细琢，带着万众期待的瞩目，5月17日上午9点，弘坤·君寓营销中心暨样板间齐开绽</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">12张最美工作照，沙坪劳动者的向上力.....</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">“沙坪人最美工作照”大海报，礼赞劳动者、献给沙坪人</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">致敬劳动者 | 劳动最光荣 奋斗最幸福！</a>
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">劳动是世界上一切欢乐和一切美好事情的源泉</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="NewsList">
+    <div class="news">公司新闻
+        <span class="en">| Company News</span>
+    </div>
+    <div class="news">行业动态
+        <span class="en">| Industry News</span>
+    </div>
+    <div class="news">视频新闻
+        <span class="en">| Video News</span>
+    </div>
+</div>
+<div class="NewsTxt_row">
+    <div class="NewsTxt">
+        <div class="txtli">
+            <div class="newsItem"><a herf="https://www.baidu.com" class="hover-color">全城共鉴 | 弘坤·东昇营销中心暨“旭日东昇”展示</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">致敬 | 全民抗疫中的“沙坪·弘坤力量”(附高清视频)</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">芙蓉中路1段6号 | Sunpeak Construction</a> </div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">沙坪奋斗者 | 王锴：建筑“老铁”</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">“疫”不容辞！沙坪·弘坤爱心献血助力防疫工作</a> </div>
+        </div>
+        <div class="txtli">
+            <div class="newsItem"><a herf="https://www.baidu.com" class="hover-color">全城共鉴 | 弘坤·东昇营销中心暨“旭日东昇”展示</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">致敬 | 全民抗疫中的“沙坪·弘坤力量”(附高清视频)</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">芙蓉中路1段6号 | Sunpeak Construction</a> </div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">沙坪奋斗者 | 王锴：建筑“老铁”</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">“疫”不容辞！沙坪·弘坤爱心献血助力防疫工作</a> </div>
+        </div>
+        <div class="txtli">
+            <div class="two">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="http://web.highkun.com/upload_files/article/135/_20181010111031_j7ull.jpg">
+                            <div class="layui-icon layui-icon-play off"></div>
+                            <div class="title">这哪个啊</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg">
+                            <div class="layui-icon layui-icon-play off"></div>
+                            <div class="title">我不知道</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://web.highkun.com/upload_files/article/135/_20180928020908_xm8ki.jpg">
+                            <div class="layui-icon layui-icon-play off"></div>
+                            <div class="title">这谁记得</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://web.highkun.com/upload_files/article/135/_20181010111023_eopft.jpg">
+                            <div class="layui-icon layui-icon-play off"></div>
+                            <div class="title">随便搞了</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            <div class="layui-carousel" id="test2">-->
+<!--                <div carousel-item>-->
+<!--                    <div class="imgAndTxt">-->
+<!--                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>-->
+<!--                        <div class="Thetxt">三能房屋宣传视频</div>-->
+<!--                    </div>-->
+<!--                    <div class="imgAndTxt">-->
+<!--                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>-->
+<!--                        <div class="Thetxt">二能房屋宣传视频</div>-->
+<!--                    </div>-->
+<!--                    <div class="imgAndTxt">-->
+<!--                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>-->
+<!--                        <div class="Thetxt">一能房屋宣传视频</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<div class="swiper3">
+    <div class="layui-carousel" id="test3">
+        <div carousel-item>
+            <img class="swh3" src="http://www.highkun.com/cn/source/images/p1.jpg">
+            <img class="swh3" src="http://www.highkun.com/cn/source/images/p2.jpg">
+            <img class="swh3" src="http://www.highkun.com/cn/source/images/p3.jpg">
+            <img class="swh3" src="http://www.highkun.com/cn/source/images/p4.jpg">
+        </div>
+    </div>
+</div>
+<div class="viewBodyRow">
+    <div class="viewRow">
+        <div class="leftView">
+            <img src="http://www.highkun.com/cn/source/images/sjbg.jpg">
+        </div>
+        <div class="rightView">
+            <div class="rightViewTop">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href=""><img src="http://www.highkun.com/cn/source/images/highkunDesign.png"></a>
+                            <div class="block">嘛玩意</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href=""><img src="http://www.highkun.com/cn/source/images/sn.jpg"></a>
+                            <div class="block">不知道</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href=""><img src="http://www.highkun.com/cn/source/images/hongqi.jpg"></a>
+                            <div class="block">分不清</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href=""><img src="http://www.highkun.com/cn/source/images/spzs.jpg"></a>
+                            <div class="block">懒得搞</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href=""><img src="http://www.highkun.com/cn/source/images/spjs.jpg"></a>
+                            <div class="block">这哪个</div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!--    <div class="swiper-pagination"></div>-->
+                </div>
+            </div>
+            <div class="rightViewBottom">
+                <div class="rightViewBottomImg">
+                    <a href="">
+                        <img src="http://www.highkun.com/cn/source/images/sjvideo.jpg">
+                        <div class="BottomImgTxt">企业视频</div>
+                    </a>
+                </div>
+                <div class="rightViewBottomImg">
+                    <a href="">
+                        <img src="http://www.highkun.com/cn/source/images/sjvi.jpg">
+                        <div class="BottomImgTxt">55周年主视觉</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true, // 循环模式选项
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 1500,
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        mousewheel: {
+            forceToAxis: true,
+        },
+        preventLinksPropagation: false,
+
+
+
+    });
+</script>
+<div class="ui-titleAndSectionRow" >
+    <div class="nonenn" style="width: 100%;height: 50px;"></div>
+    <div class="ui-Bbox">
+        <div class="ui-box"><h1>产业布局</h1></div>
+        <div class="ui-box-en"><h2>Industrial Layout</h2></div>
+    </div>
+
+    <div class="section_row">
+        <div class="container">
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/sunpeak.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">湖南省沙坪建设有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/fangchan.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">弘坤房产开发有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/sanneng.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">三能集成房屋股份有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/zhuangsi.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">湖南省沙坪装饰有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/sheiji.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">沙坪设计院</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86-0731-88188818</div>
+                        <div class="tel-emil">邮箱：spsjy@highkun.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/jinrong.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">湖南省弘德投资管理有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/shangguan.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">弘坤商业管理有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：highkunsg@highkun.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/shedu.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">社都科技股份有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+            <a href=""><div class="ui-dl">
+                <div class="cont-img"><img src="http://www.highkun.com/cn/source/images/companys/yiju.jpg"></div>
+                <div class="con-txt">
+                    <div class="top-title">湖南省宜居物业管理有限公司</div>
+                    <div class="call-action">
+                        <div class="tel-emil">电话：+86+110+120119</div>
+                        <div class="tel-emil">邮箱：2564388423@qq.com</div>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="left">
+            <div class="column_row">
+                <div class="column_row-title"><a href="">新闻中心</a></div>
+                <div class="nav-content"><a href="">公司新闻</a> </div>
+                <div class="nav-content"><a href="">视频定位</a></div>
+            </div>
+            <div class="column_row">
+                <div class="column_row-title"><a href="">建设开发</a></div>
+                <div class="nav-content"><a href="">建筑施工</a></div>
+                <div class="nav-content"><a href="">装饰设计院</a></div>
+                <div class="nav-content"><a href="">装修装饰</a></div>
+            </div>
+            <div class="column_row">
+                <div class="column_row-title"><a href="">投资服务</a></div>
+                <div class="nav-content"><a href="">弘德金融</a></div>
+                <div class="nav-content"><a href="">弘坤商管</a></div>
+                <div class="nav-content"><a href="">社德科技</a></div>
+                <div class="nav-content"><a href="">宜居物业</a></div>
+            </div>
+            <div class="column_row">
+                <div class="column_row-title"><a href="">招聘·雁行招聘</a></div>
+                <div class="nav-content"><a href="">社会招聘</a></div>
+                <div class="nav-content"><a href="">人才故事</a></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="ma">
+                <img src="http://web.highkun.com/upload_files/article/01/15626554627186e69f056a495f510c36bcf01d3efd3e7.png">
+                <p>弘坤企业微信公众号</p>
+            </div>
+            <div class="info">
+                <div class="logo"><img src="http://www.highkun.com/en/source/images/logo.png"></div>
+                <div class="tel">
+                    <img src="http://www.highkun.com/cn/source/images/tel.png">
+                    &nbsp;&nbsp;&nbsp;+86-0731-84496399-8166
+                </div>
+                <div class="address">
+                    <img src="http://www.highkun.com/cn/source/images/address.png">
+                    &nbsp;&nbsp;&nbsp;湖南省长沙市芙蓉中路一段6号沙坪商务中心
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <a href="">©2018 弘坤企业版权所有 技术支持：社都科技</a>
+        <a href="">&nbsp;&nbsp;湘ICP备16016245号-1</a>
+    </div>
+</div>
+
+<script>
+    var mySwiper = new Swiper('.two .swiper-container', {
+        loop : true,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction:false,
+        },
+    });
+</script>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;-->
+<script src="../layui/layui.js"></script>
+<script>
+    //一般直接写在一个js文件中
+    // layui.use(['layer', 'form'], function(){
+    //     var layer = layui.layer
+    //         ,form = layui.form;
+    // });
+    layui.use('element',function () {
+        var element = layui.element;
+    })
+    layui.use('carousel',function () {
+        var carousel = layui.carousel;
+        carousel.render({
+            elem:'#test1',
+            width:'733px',
+            height:'412px',
+            indicator:'none',
+        });
+        // carousel.render({
+        //     elem:'#test2',
+        //     width:'375.5px',
+        //     height:"199px",
+        //     indicator:'none',
+        //     autoplay:true,
+        //     interval:1500,
+        //     arrow:'none',
+        // });
+        carousel.render({
+            elem:'#test3',
+            width:'100%',
+            height:"644px",
+            indicator:'none',
+            arrow:'always',
+        })
+    })
+</script>
+</body>
+</html>

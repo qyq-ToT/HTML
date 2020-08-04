@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <script>
+        window.onload = function(){
+            var _xxobj = {}
+
+            Object.defineProperty(_xxobj,'xx_val',{
+                get:function(){
+                    console.log("get");
+                    return "abc"
+                },
+                set:function(n){
+                    console.log(n)
+                    document.getElementById("txt_id").value = n
+                    document.getElementById("p_id").innerHTML = n
+                }
+            })
+            _xxobj.xx_val = "abc";
+            var a = _xxobj.xx_val;
+            console.log(a);
+
+            document.addEventListener("keyup",function(e){
+                _xxobj.xx_val = e.target.value
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt_id" />
+    <p id="p_id"></p>
+</body>
+</html>

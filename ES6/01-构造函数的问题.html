@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的问题</title>
+</head>
+<script>
+    function star(name,age) {
+        this.name=name;
+        this.age=age;
+        star.prototype.sing = function () {
+            console.log("唱歌");
+        }
+        // this.sing = function(){
+        //     console.log("唱歌");
+        // }
+    }
+    var ldh = new star("刘德华",15);
+    var zxy = new star("张学友",16);
+    console.log(ldh);
+    console.log(zxy);
+    console.log(ldh.sing == zxy.sing);
+</script>
+<body>
+
+</body>
+</html>

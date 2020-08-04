@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo05</title>
+    <style>
+        #div1 .active{background-color: gold;}
+        #div1 div{
+            width: 200px; 
+            height: 200px;
+            background-color: hotpink;
+            display: none;
+            border: 1px solid #999;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //获取div1
+            var oDiv = document.getElementById('div1');
+            //获取div1里面的所有input标签，返回值是一个数组
+            var aBtn = oDiv.getElementsByTagName('input');
+            //获取div1里面的所有div标签，返回值是一个数组
+            var aDiv = oDiv.getElementsByTagName('div');
+
+            //给所有的inp绑定一个点击事件
+            for(var i = 0;i<aBtn.length;i++){
+                //添加一个索引 index 方便后面修改style
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    for(var i = 0;i<aBtn.length;i++){
+                        //在修改该标签类名之前先区别设置为空在改成active
+                        aBtn[i].className='';
+                        //在修改该标签display之前先区别设置为none在改成block
+                        aDiv[i].style.display='none';
+                    }
+                    this.className='active';
+                    aDiv[this.index].style.display='block'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input class="active" type="button" value="11"/>
+        <input type="button" value="22"/>
+        <input type="button" value="33"/>
+        <input type="button" value="44"/>
+        <div style="display: block;">1a</div>
+        <div>2a</div>
+        <div>3a</div>
+        <div>4a</div>
+    </div>
+</body>
+</html>

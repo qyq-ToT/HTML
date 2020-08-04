@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用layui</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        #test1 .swiper1{
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+        .swiperTop .layui-icon{
+            font-size: 32px;
+        }
+        .swiperTop .layui-carousel-arrow{
+            width: 50px;
+            height: 80px;
+            border-radius: 0;
+            top: 164px;
+        }
+        .swiperTop .layui-carousel:hover .layui-carousel-arrow[lay-type=add], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add] {
+            right: 0;
+
+        }
+        .swiperTop .layui-carousel:hover .layui-carousel-arrow[lay-type=sub], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add]{
+            left: 0;
+        }
+        .bannerbox{
+
+            width:100%;
+            height: 420px;
+            /*background: #0000FF;*/
+            display: flex;
+            justify-content: center;
+        }
+        .newsTitle{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 340px;
+            height: 400px;
+        }
+        .newstl{
+            width: 344px;
+            height: 70px;
+            /*border: 3px solid seagreen;*/
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newstl:nth-child(1){
+            margin-top: 0;
+        }
+        .titleTop{
+            width: 100%;
+            height: 30px;
+            color: #555;
+            font-weight: bold;
+            font-size: 18px;
+            overflow: hidden;
+            white-space:nowrap; text-overflow:ellipsis;
+        }
+        .titleBottom{
+            font-size: 14px;
+            line-height: 1.5;
+            height: 40px;
+            text-align: left;
+            color: #666;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        .hover-color:hover{
+            color: #e56b14;cursor:pointer;
+        }
+        .NewsList{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .news{
+            width: 365px;
+            height: 28px;
+            border-left: 5px solid #e56b14;
+            font-weight: normal;height: 28px;
+            padding-left: 10px;
+            line-height: 28px;font-size: 28px;color: #e56b14;
+            text-align: left;margin-top: 60px;margin-bottom: 40px;
+        }
+        .en{
+            font-size: 12px;
+            color: #777;
+            font-family: arial;
+            padding-left: 4px;
+        }
+        .NewsTxt_row{
+            width: 100%;
+            height: 300px;
+            display: flex;justify-content: center;
+        }
+        .NewsTxt{
+            /*background: #0000FF;*/
+            width: 1150px;
+            height: 200px;
+            display: flex;
+        }
+        .txtli{
+            /*border: 1px solid red;*/
+            flex: 1;width: 360px;
+            display: flex;flex-direction: column;
+        }
+        .newsItem{
+            width: 312px;
+            height: 37px;color: #666;
+            font-size: 14px;line-height: 37px;overflow: hidden;
+        }
+        .swiper2{
+            width: 366px;
+            height: 199px;
+        }
+        .imgAndTxt{
+            position: relative;
+            width: 346px;
+            height: 199px;
+        }
+        .Theimg{
+            width: 100%;
+            height: 100%;
+
+        }
+        .Thetxt{
+            position: absolute;left:0;right:0;margin: auto;
+            bottom: 10px;
+            z-index: 999;color: #0000FF;
+            width: 200px;height: 10px;
+            text-align: center;
+        }
+        #mgch1:hover,#mgch2:hover,#mgch3:hover,#mgch4:hover,#mgch5:hover{
+            transform: scale(1.2);
+        }
+        #mgch1,#mgch2,#mgch3,#mgch4,#mgch5{
+            transition: all 1.5s;
+        }
+    </style>
+</head>
+<body>
+<!-- 你的HTML代码 -->
+
+<div class="layui-row bannerbox">
+    <div class="layui-col-md6">
+        <div class="swiperTop">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                    <div class="layui-anim layui-anim-scale">
+                        <img id="mgch1" class="swiper1" src="http://web.highkun.com/upload_files//con/01/15724239122705f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch2" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724238599785f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch3" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724238045265f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch4" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724240273505f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                    <div>
+                        <img id="mgch5" class="layui-anim-scale swiper1" src="http://web.highkun.com/upload_files//con/01/15724239537175f80f6bb1c38e473eb175d7720d9417d.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3">
+        <div class="newsTitle">
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">
+                        大湾区，让你久等了 | 弘坤房产粤港...
+                    </a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">6月5日，惠州弘坤·九溪红树项目顺利通过联席会上会审批，标志着该项目已全面进入开发建设阶段。</a>
+                </div>
+
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">“弘”动星城 “寓”领长沙 | 弘坤·君寓营</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">在建党99周年前夕，沙坪建设集团党委在花垣碧桂园项目部成立2020年度第一个“流动党支部”。4月29日</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">红色引擎 沙坪力量 | 集团党委在花垣证监会发玩of哈维覅偶fish共is将公开了十几个偶问题和</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">历经上百个日夜的匠心细琢，带着万众期待的瞩目，5月17日上午9点，弘坤·君寓营销中心暨样板间齐开绽</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">12张最美工作照，沙坪劳动者的向上力.....</a>
+
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">“沙坪人最美工作照”大海报，礼赞劳动者、献给沙坪人</a>
+
+                </div>
+            </div>
+            <div class="newstl">
+                <div class="titleTop">
+                    <a href="" class="hover-color">致敬劳动者 | 劳动最光荣 奋斗最幸福！</a>
+                </div>
+                <div class="titleBottom">
+                    <a href="" class="hover-color">劳动是世界上一切欢乐和一切美好事情的源泉</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="NewsList">
+    <div class="news">公司新闻
+        <span class="en">| Company News</span>
+    </div>
+    <div class="news">行业动态
+        <span class="en">| Industry News</span>
+    </div>
+    <div class="news">视频新闻
+        <span class="en">| Video News</span>
+    </div>
+</div>
+<div class="NewsTxt_row">
+    <div class="NewsTxt">
+        <div class="txtli">
+            <div class="newsItem"><a herf="https://www.baidu.com" class="hover-color">全城共鉴 | 弘坤·东昇营销中心暨“旭日东昇”展示</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">致敬 | 全民抗疫中的“沙坪·弘坤力量”(附高清视频)</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">芙蓉中路1段6号 | Sunpeak Construction</a> </div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">沙坪奋斗者 | 王锴：建筑“老铁”</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">“疫”不容辞！沙坪·弘坤爱心献血助力防疫工作</a> </div>
+        </div>
+        <div class="txtli">
+            <div class="newsItem"><a herf="https://www.baidu.com" class="hover-color">全城共鉴 | 弘坤·东昇营销中心暨“旭日东昇”展示</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">致敬 | 全民抗疫中的“沙坪·弘坤力量”(附高清视频)</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">芙蓉中路1段6号 | Sunpeak Construction</a> </div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">沙坪奋斗者 | 王锴：建筑“老铁”</a></div>
+            <div class="newsItem"><a class="hover-color" herf="https://www.baidu.com">“疫”不容辞！沙坪·弘坤爱心献血助力防疫工作</a> </div>
+        </div>
+        <div class="txtli">
+            <div class="layui-carousel" id="test2">
+                <div carousel-item>
+                    <div class="imgAndTxt">
+                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>
+                        <div class="Thetxt">三能房屋宣传视频</div>
+                    </div>
+                    <div class="imgAndTxt">
+                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>
+                        <div class="Thetxt">二能房屋宣传视频</div>
+                    </div>
+                    <div class="imgAndTxt">
+                        <div class="Theimg"><img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111017_zymjs.jpg"></div>
+                        <div class="Thetxt">一能房屋宣传视频</div>
+                    </div>
+
+<!--                    <img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111023_eopft.jpg">-->
+<!--                    <img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20180928020908_xm8ki.jpg">-->
+<!--                    <img class="swiper2" src="http://web.highkun.com/upload_files/article/135/_20181010111031_j7ull.jpg">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('carousel',function () {
+        var carousel = layui.carousel;
+        carousel.render({
+            elem:'#test1',
+            width:'733px',
+            height:'412px',
+            indicator:'none',
+        });
+        carousel.render({
+            elem:'#test2',
+            width:'366px',
+            height:"199px",
+            indicator:'none',
+            autoplay:true,
+            interval:1500,
+            arrow:'none',
+        })
+    })
+</script>
+</body>
+</html>

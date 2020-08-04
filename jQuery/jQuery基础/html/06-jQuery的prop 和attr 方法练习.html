@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo06</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var btn = document.getElementsByTagName("button")[0];
+
+            btn.onclick=function () {
+                var ip = document.getElementsByTagName("input")[0];
+                var text = ip.value;
+
+                $("img").prop("src",text);
+
+                console.log($("img"));
+            }
+        })
+    </script>
+</head>
+<body>
+    <input type="text">
+    <button>切换图片</button><br>
+    <img src="https://p1.ssl.qhimg.com/dr/220__/t01ae30f8ad9e9ec9dd.png">
+</body>
+</html>

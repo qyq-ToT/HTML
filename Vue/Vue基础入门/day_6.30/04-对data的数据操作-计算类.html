@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        window.onload = function () {
+            var app = new Vue({
+                el:"#div",
+                data:{
+                    a:123,
+                    b:456
+                },
+                computed:{
+                    num:function () {
+                        return this.a+"/"+this.b;
+                    },
+                    ccc:function () {
+                        return 123
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="div">{{num}}</div>
+</body>
+</html>

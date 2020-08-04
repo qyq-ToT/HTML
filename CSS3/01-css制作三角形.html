@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个三角形</title>
+    <style>
+        .box2{
+            width: 0px;
+            height: 0px;
+            border: 100px solid transparent;
+            border-bottom-color: #2C8DFB;
+            position: absolute;
+            top: -200px;right: 0;
+        }
+        .bb{
+            width: 500px;height: 150px;position: relative;
+            background-color: #2C8DFB;
+        }
+        .box{
+            width: 0px;
+            height: 0px;
+            border-left: 100px solid rosybrown;
+            border-right: 100px solid blueviolet;
+            border-top: 100px solid mediumvioletred;
+            border-bottom: 100px solid mediumblue;
+
+
+        }
+        .head{
+            margin-left: 300px;
+            width: 0px;
+            height: 0px;
+            border-left: 100px solid rosybrown;
+            border-right: 100px solid blueviolet;
+            border-top: 100px solid transparent;
+            border-bottom: 100px solid mediumblue;
+            position: relative;
+        }
+        .head .head-bt{
+            width: 0px;
+            height: 0px;
+            border: 100px solid transparent;
+            border-top-color: #2C8DFB;
+            position: absolute;
+            bottom: -300px;left: -100px;
+        }
+        .head .body1{
+            width: 0px;
+            height: 0px;
+            border: 200px solid transparent;
+            border-left-color: #2C8DFB;
+            position: absolute;
+            bottom: -500px;left: 100px;
+        }
+        .head .body2{
+            width: 0px;
+            height: 0px;
+            border-left: 200px solid transparent;
+            border-right: 200px solid blueviolet;
+            border-top: 200px solid transparent;
+            border-bottom: 200px solid blueviolet;
+            position: absolute;
+            bottom: -700px;left: -100px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div class="bb">
+    <div class="box2"></div>
+</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<div class="head">
+    <div class="head-bt"></div>
+    <div class="body1"></div>
+    <div class="body2"></div>
+</div>
+</body>
+</html>

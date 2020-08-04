@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo02</title>
+    <script src="../js/jquery-1.10.1.js"></script>
+    <script>
+        // 第一种写法
+        // $(document).ready(function () {
+        //     alert(123)
+        // })
+        //第二种写法
+        // jQuery(document).ready(function () {
+        //     alert(123)
+        // })
+        //第三种写法
+        // $(function () {
+        //     alert(123)
+        // })
+        // 第四种写法
+        jQuery(function () {
+            alert(123)
+        })
+        /**
+         * 其实这四种方法没有什么屌用，通常用第三种，写的少·做得多，(jQuery宣传语)
+         * 但是，如果使用了其他的框架，它也有用  $  这个符号就不能用第三种方法了，解决方法
+         * 只能是把$ 换成jQuery ，莫得办法不可以偷懒了 加一行代码，释放$的使用权
+         * jQuery.noConflict();
+         * 在这之后的所以$符号都要换成jQuery。
+         *
+         * 第二种方法：自定义访问符号
+         * var 自定义 = jQuery.noConflict();
+         * 后面的$符号都要换成自定义的，好处在于不用打又臭又长的jQuery。
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

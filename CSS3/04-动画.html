@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var oDiv = $(".div")
+            console.log(oDiv);
+            for (let i = 0;i<oDiv.length;i++){
+
+                $(".btn").click(function () {
+                    // alert(13)
+                    oDiv.eq(i).removeClass("div")
+                    setTimeout(function () {
+                        oDiv.addClass("div")
+                    },1000)
+
+                })
+            }
+
+        })
+    </script>
+    <style>
+        .btn{
+            width: 100px;height: 40px;background-color: #2C8DFB;
+        }
+        .big{
+            width: 1000px;height: 1000px;
+            border: 3px solid seagreen;
+            position: relative;
+            display: flex;flex-direction: column;
+            align-items: start;justify-content: start;
+        }
+        .big .div{
+            width: 770px;height: 60px;
+            position: absolute;
+            animation: myfirst 1s;
+            animation-timing-function:ease;
+            line-height: 55px;font-size: 50px;color: #fff;
+            background: #0076D3;
+        }
+        .big .div:nth-child(2){
+            width: 700px;height: 55px;
+            line-height: 55px;font-size: 50px;color: #fff;
+            background: #262F36;
+        }
+        .big .div:nth-child(3){
+            width: 335px;height: 42px;
+            animation: myfirst2 1s;
+            line-height: 42px;font-size: 30px;color: #186AAB
+        }
+        .big .div:nth-child(4){
+            width: 1200px;height: 56px;
+            animation: myfirst2 1s;
+            line-height: 28px;font-size: 16px;color: #fff
+        }
+        @keyframes myfirst {
+            from{left: -700px;opacity: 60%}
+            to{left: 0;opacity:100%}
+        }
+        @keyframes myfirst2 {
+            from{bottom: -400px;opacity: 60%}
+            to{bottom: 300px;opacity:100%}
+        }
+    </style>
+</head>
+<body>
+<button class="btn">点我</button>
+<div class="big">
+    <div class="div">
+        九天银河产业园--第一个
+    </div>
+    <div class="div">
+        QAQAQAQAQAQAQAQA
+    </div>
+    <div class="div">
+        一些乱七八糟的字，随便打打算了
+    </div>
+    <div class="div">
+        好地方计划位爱淘宝蒋某IM额比自然难免会是紫色让她见你爸妈买的什么女妖打来福MV我我玩把问题好吧VN那么肥奇偶码誒别VN后面
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <style>
+        #div1{width: 100px;height: 100px;background-color: gold;margin: 10px;border: 10px solid black;}
+        #div2{width: 100px;height: 100px;background-color: gold;margin: 10px;}
+    </style>
+    <script>
+        window.onload=function(){
+            //获取所有的div标签存在aDiv
+            var aDiv=document.getElementsByTagName("div");
+            //遍历数组，在遍历的同时给每个元素绑定事件
+            for(var i = 0;i<aDiv.length;i++){
+                //循环同时给每个元素加个定时器
+                aDiv[i].timer=null;
+                aDiv[i].onmouseover=function(){
+                    //绑定好事件的同时，调用方法，传入两个参数，
+                    //谁调方法？如何区分？！！！this，并且作为参数传入。
+                    startMove(this,400);
+                }
+                aDiv[i].onmouseout=function(){
+                    startMove(this,100);
+                }
+            }
+
+            // var timer=null; 一个定时器不行！！
+            //obj 为当前执行方法的对象，iTarget为要移动的数值
+            function startMove(obj,iTarget){
+                //在开始之前先关闭当前定时器
+                clearInterval(obj.timer);
+                //开始定时器，里面放入运动代码。
+                obj.timer=setInterval(function(){
+
+
+                    //定义速度
+                    // var speed=(iTarget-obj.offsetWidth)/6;
+                    //不再使用offset之类的方法，有BUG
+                    var speed=(iTarget-parseInt(getStyle(obj,"width")))/6;
+                    //当然咯，parseInt(getStyle(obj,"width"))有好几次用到了
+                    //也可以存入在一个变量里面 例如 var cur=parseInt(getStyle(obj,"width"));
+                    //缓冲--> 注意要做取整的操作
+                    //为什么使用缓冲？？？
+                    //假设移动到300px,但是在299.5就停下了，因为速度不一定可以除尽
+                    //要移动的距离，会造成反复横跳的情况，所有要使用缓冲。
+                    speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                    if(parseInt(getStyle(obj,"width"))==iTarget){
+                        clearInterval(obj.timer);
+                    }else{
+                        // obj.style.width=obj.offsetWidth+speed+"px";
+                        //有BUG，理由同39行
+                        obj.style.width=parseInt(getStyle(obj,"width"))+speed+'px';
+                    }
+                },30);
+            }
+            
+        }
+        //一个获取CSS样式表里面的东西的方法，并且带有兼容处理
+        function getStyle(obj,name){
+            if(obj.currentStyle){
+                return obj.currentStyle[name]
+            }else{
+                return getComputedStyle(obj,false)[name];//false是一个垃圾，没有意义的。
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

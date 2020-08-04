@@ -1,0 +1,1 @@
+console.log("o(￣ヘ￣o＃)");

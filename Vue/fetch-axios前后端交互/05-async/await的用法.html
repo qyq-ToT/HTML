@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async/await</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        async function axiosAjax(){
+            const ret = await axios.get('http://localhost:63342/HTML_ROW/Vue/Vue%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/day_7.3/08-%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD.html?_ijt=5p8emk7nmuvhbp8h5sa0eft54i')
+            return ret
+        }
+        axiosAjax().then(ret=>{
+            console.log(ret.data);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

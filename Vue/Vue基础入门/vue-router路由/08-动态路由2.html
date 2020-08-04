@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+    <script src="../../vue.js"></script>
+    <script src="../../vue-router.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    //创建router对象
+    var Login = {
+        props:['id'],
+        //传进props里面好搞一点，下面这方法不灵活
+        // template:'<div>我是登录页面,id为{{$route.params.id}}</div>'
+        template:'<div>我是登录页面,id为{{id}}</div>'
+    }
+    var Register = {
+        template:'<div>我是注册页面</div>'
+    }
+    var router = new VueRouter({
+        //配置路由对象
+        routes:[
+            {
+                path:"/login/:id",
+                component:Login,
+                props:true
+            },
+            {
+                path:"/register",
+                component:Register
+            }
+        ]
+    });
+    var App = {
+        template: '<div>' +
+            '<router-link to="/login/1">登录页面1</router-link>' +
+            '<router-link to="/login/2">登录页面2</router-link>' +
+            '<router-link to="/login/3">登录页面3</router-link>' +
+            '<router-link to="/register">注册页面</router-link>' +
+            '<router-view></router-view>' +
+            '</div>'
+    }
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+
+            }
+        },
+        components:{
+            App
+        },
+        template:'<App></App>',
+        router:router
+    })
+</script>
+</body>
+</html>

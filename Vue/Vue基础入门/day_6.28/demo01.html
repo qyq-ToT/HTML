@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../../../jQuery/jQuery基础/js/jquery-1.10.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var app = new Vue({
+                el:".row",
+                data:{
+                    num:1
+                },
+                methods:{
+                    add:function () {
+                        if (this.num<10){
+                            this.num+=1;
+                        } else if (this.num>=10){
+                            alert("还加个锤子");
+                        }
+
+                    },
+                    sub:function () {
+                        this.num-=1;
+                    }
+                }
+            })
+        })
+    </script>
+    <style>
+        .tt{
+            width: 100px;
+            height: 100px;
+            background-color: #8acc7d;
+        }
+        .row{
+            position: relative;top: 0;bottom: 0;left: 0;right: 0;margin: auto;
+            width: 300px;height: 60px;
+            border: 1px solid blue;
+        }
+        .row>button{width: 100px;height: 60px;background-color: #ff8888;color: #00F7DE;
+        font-size: 48px;font-weight: 500;}
+        .row span{
+            width: 80px;line-height: 60px;display:inline-block;
+            background-color:coral;text-align: center;color: #0000FF;}
+    </style>
+</head>
+<body>
+<div class="row">
+    <button @click="add">+</button>
+    <span>{{ num }}</span>
+    <button @click="sub">-</button>
+</div>
+<span class="tt"></span>
+</body>
+</html>

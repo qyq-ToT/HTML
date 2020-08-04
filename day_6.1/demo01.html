@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <script>
+        function toDou(n){
+            if(n<10){
+                return '0'+n;
+            }else{
+                return ''+n;
+            }
+        }
+        window.onload=function(){
+            
+            function tick(){
+                var oDate = new Date();
+                var str = toDou(oDate.getDate())+toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+                document.write(str+"  ");
+                // alert(str[7]); 这种方式低版本浏览器不兼容
+
+                alert(str.charAt(7));
+            }
+
+            setInterval(tick,1000);
+            tick();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

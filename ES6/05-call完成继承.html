@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call继承</title>
+</head>
+<body>
+<script>
+    function Father(name,age) {
+        this.age=age;
+        this.name=name;
+        console.log(this);
+    }
+    function Son(name,age) {
+        console.log(this);
+        Father.call(this,name,age)
+        // Father.call(this,name,age)
+    }
+    console.log(new Son("张豆豆",99));
+    console.log(new Father("豆豆爹",99));
+</script>
+</body>
+</html>

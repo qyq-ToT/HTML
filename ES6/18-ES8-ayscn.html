@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async</title>
+
+    <script>
+        var getAjax = new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET","../HTML5/01-播放视频.html")
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState===4){
+                    if (xhr.status>=200&&xhr.status<300){
+                        console.log("o(*￣︶￣*)o");
+                        resolve(xhr)
+                    }else {
+                        reject(xhr)
+                    }
+                }
+            }
+        });
+        async function ajax() {
+            try {
+                let result = await getAjax;
+                console.log(result.response);
+            }catch (e) {
+                console.log(e);
+            }
+        }
+        // ajax().then(value =>{
+        //     console.log(value);
+        // } ,reason =>{
+        //     console.log(reason);
+        // })
+        // console.log(ajax());
+        ajax()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

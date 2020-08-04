@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo10</title>
+    <style>
+        div{
+            width: 100px;
+            height: 400px;
+            background-color: gold;
+            display: none;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+
+            $("button").eq(0).click(function () {
+                $("div").slideDown(2000,function () {
+                    // alert("展开完毕");
+                })
+            });
+            var $div = $("div").eq(1);
+            $("button").eq(1).click(function () {
+                $("div").slideUp(2000,function () {
+                    // alert("收起完毕");
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+<div>o(*￣︶￣*)o</div>
+<button>展开</button>
+<button>收起</button>
+</body>
+</html>

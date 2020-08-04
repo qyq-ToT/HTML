@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余参数</title>
+    <script>
+        let add = (...args)=>{
+            let tol = 0;
+            args.forEach(item => tol+=item)
+            return tol
+        }
+        console.log(add(10,20,30));
+        console.log(add(30,70,42,12));
+        let arr=['zs','ww','tt','jj']
+        let [a, ...b]=arr;
+        console.log(b);
+        console.log(3%2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

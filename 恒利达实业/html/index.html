@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>湖南恒利达实业有限公司</title>
+    <link rel="stylesheet" href="../lib/layui.css">
+    <script src="../../LayUi/layui/layui.js"></script>
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../lib/vue.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //编写jQuery相关代码
+            var app = new Vue({
+                el:".headNavigation",
+                data:{
+                    massage:"hello",
+                    headNavList:["首页","关于我们","园区配套","入驻企业","入驻招商","联系我们"],
+                    activeIndex:0,
+                },
+                methods:{
+                    navIsActive(index){
+                        this.activeIndex = index;
+                        alert(this.activeIndex)
+                    }
+                },
+                computed:{
+
+                }
+            })
+            var apptwo = new Vue({
+                el:".companyInfoRow",
+                data:{
+                    demo:123,
+                    compInfoList:[
+                        {
+                            "imgSrc":"https://s1.ax1x.com/2020/07/02/NbDwFg.png",
+                            "text":"湖南·长沙 高新区延农路72号九天银行产业园2栋10楼"
+                        },
+                        {
+                            "imgSrc":"https://s1.ax1x.com/2020/07/02/Nb2e9U.png",
+                            "text":"联系电话：1869273889"
+                        },
+                        {
+                            "imgSrc":"https://s1.ax1x.com/2020/07/02/Nb2AA0.png",
+                            "text":"mail@hld0731.com"
+                        }
+                    ],
+                    navList:["首页","关于我们","园区配套","入驻企业","入驻招商","联系我们"]
+                },
+                methods:{
+
+                },
+                computed:{
+
+                }
+            })
+            var appthree = new Vue({
+                el:".ul",
+                data:{
+                    message:"hello",
+                    navList:["首页","关于我们","园区配套","入驻企业","入驻招商","联系我们"]
+                },
+                methods:{
+                    navClick(index){
+                        alert(index);
+                    }
+                },
+                computed:{}
+            })
+            var app4 = new Vue({
+                el:".newsContentRows",
+                data:{
+                    infoList:[
+                        {
+                            text:"国务院督查组来园区督查创新驱动发展情况",
+                            data:"20 Jun 2019",
+                        },
+                        {
+                            text:"长沙高新区高企培育工程 高企需求表开始征集啦",
+                            data:"21 Jun 2019",
+                        },
+                        {
+                            text:"长沙市政府与中国电子签署战略合作框架协议 胡衡华芮晓武见证签约",
+                            data:"22 Jun 2020",
+                        }
+                        ]
+                },
+                methods:{
+                    navToNews(index){
+                        alert("你点击的是第"+index+"个")
+                    }
+                },
+                computed:{
+
+                }
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .bottomInfo .newsRow{
+            border: 1px solid cyan;
+            width: 370px;height: 277px;
+        }
+        .bottomInfo .newsRow .title{
+            font-size: 22px;font-weight:800;color: #FEF9F9;padding-bottom: 28px;
+        }
+        .bottomInfo .newsRow .newsContentRows{
+            margin-top: 10px;
+            border: 1px solid khaki;
+            display: flex;flex-direction: column;
+            width: 325px;height: 210px;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent{
+            display: flex;flex-direction: row;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent .left{
+            border-top: 4px solid #ffffff;
+            width: 10px;height: 40px;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent .right{
+            margin-left: 5px;
+            border: 1px solid lawngreen;
+            width: 100%;
+            display: flex;flex-direction: column;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent .right .newsText{
+            font-size: 14px;color: #C9C9C9;line-height: 26px;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent .right .newsText:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .bottomInfo .newsRow .newsContentRows .newsContent .right .newsData{
+            margin-top: 5px;
+            color: #576673;font-size: 13px;display: block;
+        }
+
+        .bottomInfo .userTableRow .title{
+            font-size: 22px;font-weight:800;color: #FEF9F9;padding-bottom: 28px;
+        }
+        .bottomInfo .userTableRow .userFrom .userInfo{
+            width: 330px;height: 40px;margin-top: 10px;
+            background-color: #2C353C;
+            border: none;
+        }
+        .bottomInfo .userTableRow .userFrom .userMessage{
+            width: 330px;margin-top: 10px;
+            background-color: #2C353C;resize: none;
+            border: none;
+            height: 110px;
+        }
+        .bottomInfo .userTableRow .userFrom .userMessage::-webkit-input-placeholder{
+            text-align: left;align-items: start;
+        }
+        .bottomInfo .userTableRow .userFrom .submit{
+            width: 330px;height: 40px;margin-top: 10px;
+            background-color: #2C353C;
+            border: none;
+        }
+
+        .BigBottomRow{
+            display: flex;flex-direction: column;
+            justify-content: space-between;align-items: center;
+            background-color: #262F36;
+        }
+        .BigBottomRow .bottom-footer{
+            height: 65px;line-height: 65px;text-align: center;
+            display: flex;
+        }
+        .BigBottomRow .bottom-footer .text{
+            color: #333333;transition: color 2s;
+        }
+        .BigBottomRow .bottom-footer .text:nth-child(2){
+            margin: 0 5px;color: #FF6600;
+        }
+        .BigBottomRow .bottom-footer .text:nth-child(2):hover{
+            cursor: pointer;
+            color: #c9c9c9;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="topInfo">
+    <div class="left">您好，欢迎访问恒利达实业有限公司</div>
+    <div class="right">咨询热线：&nbsp;&nbsp;&nbsp;18692738889</div>
+</div>
+<div class="headNavigation">
+    <div class="navLog">
+        <img src="http://www.hld0731.com/web/source/images//logo.png">
+    </div>
+    <div class="navItemRow">
+        <div class="navItem"  :class="activeIndex == index?'navActive':''" @click="navIsActive(index)" v-for="(item,index) in headNavList">{{item}}</div>
+    </div>
+</div>
+<div class="BigBottomRow">
+    <div class="bottomInfo">
+        <div class="companyInfoRow">
+            <div class="infoImg">
+                <a href="https://www.baidu.com">
+                    <img src="http://www.hld0731.com/web/source/images/logo_w.png">
+                </a>
+            </div>
+            <div v-for="item in compInfoList" class="compInfo">
+                <div class="cInfo-icon">
+                    <img :src="item['imgSrc']">
+                </div>
+                <div class="cInfo-text">
+                    <div>{{item['text']}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottomNavRow">
+            <p>恒利达实业</p>
+            <div class="ul">
+                <div class="li" v-for="(item,index) in navList">
+                    <div @click="navClick(index)">{{item}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="newsRow">
+            <div class="title">新闻中心</div>
+            <div class="newsContentRows">
+                <div class="newsContent" v-for="(item,index) in infoList">
+                    <div class="left"></div>
+                    <div class="right">
+                        <div class="newsText" @click="navToNews(index)">
+                            {{item.text}}
+                        </div>
+                        <div class="newsData">
+                            {{item.data}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="userTableRow">
+            <div class="title">联系我们</div>
+            <div class="userFrom">
+                <form action="http://www.baidu.com" method="get">
+                    <input placeholder="您的姓名" class="userInfo" type="text" name="userName"><br>
+                    <input placeholder="您的电话" class="userInfo" type="text" name="userTel"><br>
+                    <textarea placeholder="您要填写的信息" class="userMessage" type="text" name="userMessage"></textarea><br>
+                    <input class="submit" type="submit" value="发送">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <p class="text">copyright @ 2019</p>
+        <a href="http://www.taobao.com" id="bNav" class="text">湖南恒利达实业有限公司</a>
+        <p class="text">All Rights Reservd.</p>
+    </div>
+</div>
+</body>
+</html>

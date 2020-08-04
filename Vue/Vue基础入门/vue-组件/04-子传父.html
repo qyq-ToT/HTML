@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子传父</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <son @ftfn="handle($event)"></son>
+</div>
+
+<script>
+    Vue.component('son',{
+        data() {
+            return{
+
+            }
+        },
+        template: `<button @click="$emit('ftfn',10)"></button>`
+    })
+    var app = new Vue({
+            el:"#app",
+            data(){
+                return{
+
+                }
+            },
+            methods:{
+                handle(val){
+                    alert(val)
+                }
+            },
+            components:{},
+            template:``
+        })
+</script>
+</body>
+</html>

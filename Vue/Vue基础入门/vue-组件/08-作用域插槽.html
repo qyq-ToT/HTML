@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <son :list="heroList">
+        <template slot-scope="slotProps">
+            <strong v-if="slotProps.info.id==2" class="current">{{slotProps.info.name}}</strong>
+            <span v-else>{{slotProps.info.name}}</span>
+        </template>
+    </son>
+</div>
+<script>
+    Vue.component('son',{
+        props:['list'],
+        template: `
+            <div>
+                <li v-bind:key="item.id" v-for="item in list">
+                    <slot :info="item">{{item.name}}</slot>
+                </li>
+            </div>
+        `
+    })
+    var app = new Vue({
+            el:"#app",
+            data(){
+                return{
+                    heroList:[
+                        {
+                            id:1,
+                            name:"Riven"
+                        },
+                        {
+                            id:2,
+                            name:"GayLen"
+                        },
+                        {
+                            id:3,
+                            name:"JiNex"
+                        }
+                    ]
+                }
+            },
+            methods:{},
+            components:{},
+            template:``
+        })
+</script>
+</body>
+</html>

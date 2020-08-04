@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+    <script>
+        const p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let data = "来自宇宙的信息";
+                resolve(data);
+            },3000)
+        })
+        //通过调用 resolve 或者 reject 来改变 p 的状态 调用时可以携带参数
+        //then(fn,fn)方法里面的参数是两个函数，根据状态来执行其中一个
+        p.then(function (value) {
+            console.log(value);
+        },function (reason) {
+            
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

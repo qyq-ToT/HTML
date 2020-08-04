@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 120px;
+            height: 120px;
+            background-color: gold;
+            display: none;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        //编写jQuery相关代码
+            var $div = $("div").eq(0)
+            console.log($div);
+            $("button").eq(0).on("click",function () {
+                // $div.css("display","block");
+                $div.show(2000);
+
+            })
+            $("button").eq(1).on("click",function () {
+                // $div.css("display","none");
+                $div.hide(2000);
+            })
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<button>显示</button>
+<button>隐藏</button>
+</body>
+</html>

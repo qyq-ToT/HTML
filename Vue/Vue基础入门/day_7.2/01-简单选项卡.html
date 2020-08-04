@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <script src="../../../恒利达实业/lib/jquery-1.12.4.js"></script>
+    <style>
+
+        .btnAtive{
+            background: red;
+            color: #fff;
+        }
+        .container{
+            width:200px;
+            height: 200px;
+            overflow: hidden;
+            background: #ccc;
+        }
+
+        .container>div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <button  v-for="(item,index) in btns"
+            :class="activeIndex == index?'btnAtive':''"
+            @click="handleToggle(index)"
+    >{{item}}</button>
+    <div class="container">
+        <div v-for="(item,index) in contents" v-show="activeIndex == index">{{item}}</div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            btns:["按钮一","按钮二","按钮三"],
+            contents:[
+                "内容一",
+                "内容二",
+                "内容三"
+            ],
+            activeIndex:0
+        },
+        methods:{
+            handleToggle(index){
+                this.activeIndex = index;
+                console.log($("#app"));
+            }
+        }
+    })
+    console.log($("#app")+"外面的");
+    console.log(123);
+</script>

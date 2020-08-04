@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo07</title>
+
+    <script>
+        window.onload=function(){
+            var Dt1 = document.getElementById('txt1');
+            var Dt2 = document.getElementById('txt2');
+            var Btn = document.getElementById('brn');
+
+            Btn.onclick=function(){
+                alert(parseInt(Dt1.value)+parseInt(Dt2.value));
+            };
+        }
+    </script>
+</head>
+<body>
+    <input id="txt1" type="text"/>
+    <input id="txt2" type="text/">
+    <input id="brn" type="button" value="求和"/>
+</body>
+</html>

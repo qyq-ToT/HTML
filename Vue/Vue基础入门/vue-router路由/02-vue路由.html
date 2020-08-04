@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+    <script src="../../vue.js"></script>
+    <script src="../../vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+    <router-link to="/login">登录页面</router-link>
+    <router-link to="/register">注册页面</router-link>
+    <router-view></router-view>
+</div>
+<script>
+    //创建router对象
+    var Login = {
+        template:'<div>我是登录页面</div>'
+    }
+    var Register = {
+        template:'<div>我是注册页面</div>'
+    }
+    var router = new VueRouter({
+        //配置路由对象
+        routes:[
+            {
+                path:"/login",
+                component:Login
+            },
+            {
+                path:"/register",
+                component:Register
+            }
+        ]
+    });
+    // var App = {
+    //     template: '<div>' +
+    //         '<router-link to="/login">登录页面</router-link>' +
+    //         '<router-link to="/register">注册页面</router-link>' +
+    //         '<router-view></router-view>' +
+    //         '</div>'
+    // }
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+
+            }
+        },
+        components:{
+            // App
+        },
+        // template:'<App></App>',
+        router:router
+    })
+</script>
+</body>
+</html>
